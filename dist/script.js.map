@@ -1,0 +1,1 @@
+{"version":3,"file":"script.js","names":["toggleMenu","menuButton","document","querySelector","mobileMenu","mobileLogo","classList","toggle"],"sources":["script.js"],"mappings":"AAAA,SAASA,aACL,MAAMC,EAAaC,SAASC,cAAc,gBACpCC,EAAaF,SAASC,cAAc,gBACpCE,EAAaH,SAASC,cAAc,8BAC1CF,EAAWK,UAAUC,OAAO,UAC5BH,EAAWE,UAAUC,OAAO,UAC5BF,EAAWC,UAAUC,OAAO"}

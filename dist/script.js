@@ -1,0 +1,2 @@
+function toggleMenu(){const e=document.querySelector(".burger-menu"),t=document.querySelector(".mobile-menu"),o=document.querySelector(".mobile-header .logo-block");e.classList.toggle("active"),t.classList.toggle("active"),o.classList.toggle("active")}
+//# sourceMappingURL=script.js.map
