@@ -19,11 +19,11 @@
         </ul>
     </div>
     <div class="head-half">
-        <a class="donat-button" href="/">Допомогти зараз</a>
+        <a class="donat-button" href="#donat-form">Допомогти зараз</a>
         <ul class="navigate">
             <li><a href="#beginningBlock">Про нас</a></li>
             <li><a href="#about">Що ми робимо</a></li>
-            <li><a href="#help">Отримати допомогу</a></li>
+            <li><a href="#help-form">Отримати допомогу</a></li>
         </ul>
         <div class="language">
             <span class="ukr active"></span>
@@ -50,7 +50,7 @@
             <li><a onclick="toggleMenu()" href="#beginningBlock">Про нас</a></li>
             <li><a onclick="toggleMenu()" href="#about">Що ми робимо</a></li>
             <li><a onclick="toggleMenu()" href="#about">Допомогти зараз</a></li>
-            <li><a onclick="toggleMenu()" href="#help">Отримати допомогу</a></li>
+            <li><a onclick="toggleMenu()" href="#help-form">Отримати допомогу</a></li>
         </ul>
     </div>
 </header>
@@ -98,7 +98,7 @@
                 <h1>Забезпечуємо<br> українських захисників<br> на передовій усім необхідним</h1>
                 <h3>Mild Hills — некомерційний фонд</h3>
                 <p>Вся суть фонду, створеного колишніми комбатантами та небайдужими<br> людьми, полягає в тому, щоб забезпечити необхідним захистом тих,<br> хто бореться за майбутнє своєї нації.</p>
-                <a class="donat-button" href="/">Внести благодійний внесок</a>
+                <a class="donat-button" href="#donat-form">Внести благодійний внесок</a>
             </div>
             <div class="colorless-block">
                 <div class="left-image">
@@ -162,10 +162,173 @@
             <img src="/img/help-1.jpg" alt="Допомога постраждалим">
             <img src="/img/help-2.jpg" alt="Створення центрів допомоги">
         </div>
+        <div class="help-form-block">
+            <form id="help-form" class="help-form">
+                <div class="type-block">
+                    <h1>Отримай допомогу</h1>
+                    <p>Ви постраждали від  віїни в Україні?<br>Напишіть нам як ми можемо вам допомогти</p>
+                    <input type="radio" id="legal" name="type" value="legal">
+                    <label for="legal">Юредична допомога</label><br>
+                    <input type="radio" id="health" name="type" value="health">
+                    <label for="health">Медична допомога</label><br>
+                    <input type="radio" id="matirial" name="type" value="material">
+                    <label for="matirial">Матеріальна допомога</label><br>
+                    <input type="radio" id="other" name="type" value="other" checked="checked">
+                    <label for="other">Iнше</label>
+                </div>
+                <div class="writer-info">
+                    <input type="text" id="name" name="name" placeholder="Ваше ім’я"/>
+                    <input type="text" id="email" name="email" placeholder="Ваше електронна пошта"/>
+                    <input type="text" id="phone" name="phone" placeholder="Контактний телефон"/>
+                    <input type="text" id="telegram" name="telegram" placeholder="Нік у Telegram"/>
+                    <button class="donat-button" type="submit">Надіслати</button>
+                </div>
+            </form>
+        </div>
+        <div class="app-container">
+            <div class="app-box">
+                <div class="application-block">
+                    <div class="step-block step1">
+                        <div class="step-image">
+                            <p class="step-number">1</p>
+                            <div class="step-illustration"><em>></em><a href="/">pb.ua/apps</a></div>
+                        </div>
+                        <div class="step-text">
+                            <div class="pixel-arrow">
+                                <div class="pixel pixel-1"></div>
+                                <div class="pixel pixel-2"></div>
+                                <div class="pixel pixel-3"></div>
+                                <div class="pixel pixel-4"></div>
+                            </div>
+                            <p>Завантажте додаток Приват24</p>
+                        </div>
+                    </div>
+                    <div class="step-block step2">
+                        <div class="step-image">
+                            <p class="step-number">2</p>
+                            <div class="step-illustration"><img src="/img/icon/qr_code.png" alt="QR"></div>
+                        </div>
+                        <div class="step-text">
+                            <div class="pixel-arrow">
+                                <div class="pixel pixel-1"></div>
+                                <div class="pixel pixel-2"></div>
+                                <div class="pixel pixel-3"></div>
+                                <div class="pixel pixel-4"></div>
+                            </div>
+                            <p>Натисните QR</p>
+                        </div>
+                    </div>
+                    <div class="step-block step3">
+                        <div class="step-image">
+                            <p class="step-number">3</p>
+                            <div class="step-illustration icomoon"><img src="/img/icon/focus.svg" alt="QR"></div>
+                        </div>
+                        <div class="step-text">
+                            <div class="pixel-arrow">
+                                <div class="pixel pixel-1"></div>
+                                <div class="pixel pixel-2"></div>
+                                <div class="pixel pixel-3"></div>
+                                <div class="pixel pixel-4"></div>
+                            </div>
+                            <p>Відскануйте QR</p>
+                        </div>
+                    </div>
+                    <div class="step-block step4">
+                        <div class="step-image">
+                            <p class="step-number">4</p>
+                            <div class="step-illustration icomoon"><img src="/img/icon/card.svg" alt="QR"></div>
+                        </div>
+                        <div class="step-text">
+                            <div class="pixel-arrow">
+                                <div class="pixel pixel-1"></div>
+                                <div class="pixel pixel-2"></div>
+                                <div class="pixel pixel-3"></div>
+                                <div class="pixel pixel-4"></div>
+                            </div>
+                            <p>Оберати картку для оплати</div>
+                    </div>
+                </div>
+                <div class="app-donat-block">
+                    <a class="donat-button" href="#donat-form">Допомогти</a>
+                </div>
+            </div>
+        </div>
+        <div class="donat-form-box">
+            <div class="donat-form-block">
+                <h1>Допомогти зараз</h1>
+                <div class="donat-method">
+                    <a href="#donat-form" class="active">Банківська картка</a><a href="#donat-form">Грошовий переказ</a>
+                </div>
+                <form id="donat-form" class="donat-form">
+                    <div class="donat-count-block">
+                        <input type="radio" id="donat20" name="type" value="20">
+                        <label for="donat20" class="active">20 грн.</label>
+                        <input type="radio" id="donat50" name="type" value="50">
+                        <label for="donat50">50 грн.</label>
+                        <input type="radio" id="donat500" name="type" value="500">
+                        <label for="donat500">500 грн.</label>
+                        <input type="radio" id="donat200" name="type" value="200" checked="checked">
+                        <label for="donat200">200 грн.</label>
+                        <input type="radio" id="donat2000" name="type" value="2000">
+                        <label for="donat2000">2000 грн.</label>
+                        <input type="radio" id="donatOther" name="type" value="other">
+                        <label for="donatOther" class="other-count">інша сумма</label>
+                    </div>
+                    <div class="donat-info">
+                        <input type="text" id="donat-name" name="name" placeholder="Ваше ім’я"/>
+                        <input type="text" id="donat-email" name="email" placeholder="Ваше електронна пошта"/>
+                        <input type="text" id="donat-phone" name="phone" placeholder="Контактний телефон"/>
+                        <button class="donat-button" type="submit">Допомогти</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     </div>
 </main>
 <footer>
-
+    <div class="footer-block">
+        <div class="block-with-logo">
+            <img class="logo" src="/img/logo-black.svg" alt="Mild Hills">
+            <p>Ми збираємо кошти на життєво<br> важливі програми для людей в<br> Україні, які постраждали від війни</p>
+        </div>
+        <div class="footer-link-block">
+            <div class="info">
+                <h3>Інформація</h3>
+                <ul>
+                    <li><a href="#about">Про нас</a></li>
+                    <li><a href="#help-form">Благодійна платформа</a></li>
+                    <li><a href="#donat-form">Допомогти зараз</a></li>
+                    <li><a href="#help-form">Отримати допомогу</a></li>
+                </ul>
+            </div>
+            <div class="props">
+                <h3>Реквiзити</h3>
+                <ul>
+                    <li><a href="">Українська гривня ₴</a></li>
+                    <li><a href="">United States Dollar $</a></li>
+                    <li><a href="">Euro €</a></li>
+                    <li><a href="">Polish złoty zł</a></li>
+                    <li><a href="">Pound sterling £</a></li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h3>Контакти Mild Hills</h3>
+                <ul>
+                    <li class="phone icomoon">
+                        <a href="tel:+380630616485">+38 (063) 061 64 85</a>
+                    </li>
+                    <li class="mail icomoon">
+                        <a href="mailto: сf.mildhills@gmail.com">сf.mildhills@gmail.com</a>
+                    </li>
+                    <li class="location icomoon">
+                        <a href="https://goo.gl/maps/wRw9w8gutupgbp8r6" target="_blank">м. Київ, вул. Васількивська, 100-А</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <p class="copywriter">2022 Mild Hills. © Усі права захищені</p>
 </footer>
 </body>
 </html>

@@ -43,9 +43,6 @@ h2 {
     background: #040404;
     opacity: 0.8;
   }
-  .pixel-2 {
-    background: #fff;
-  }
   .pixel-3 {
     background: #040404;
   }
@@ -83,7 +80,7 @@ h2 {
   font-weight: 700;
   background: #063758;
   border: 4px solid $yellowColor;
-  width: 200px;
+  width: 299px;
   height: 56px;
   box-sizing: border-box;
   display: flex;
@@ -166,6 +163,7 @@ header {
   }
   .donat-button {
     margin-right: 48px;
+    width: 200px;
   }
   .language {
     margin-right: 0;
@@ -395,6 +393,7 @@ header {
       object-fit: contain;
     }
     .about-text {
+      padding-right: 180px;
       h2 {
         margin-bottom: 65px;
       }
@@ -415,7 +414,7 @@ header {
   }
   .help-image {
     display: flex;
-    padding: 0 25px;
+    padding: 0 25px 150px;
     img {
       margin-right: 10px;
       width: 41%;
@@ -423,6 +422,308 @@ header {
         width: 58%;
       }
     }
+  }
+  .help-form {
+    background: #F5F5F5;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.08);
+    max-width: 1558px;
+    margin: 0 auto 280px;
+    padding: 110px 160px;
+    display: flex;
+    .type-block {
+      width: 50%;
+      h1 {
+        font-size: 50px;
+        line-height: 60px;
+        margin-bottom: 55px;
+        font-family: $lato;
+        font-weight: 700;
+        color: $blueColor;
+      }
+      p {
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 150%;
+        margin-bottom: 55px;
+      }
+      input {
+        margin:0 8px 24px 0;
+      }
+    }
+    .writer-info {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      width: 50%;
+      input {
+        margin-bottom: 32px;
+        width: 100%;
+        height: 64px;
+        border: 2px solid #000000;
+        border-radius: 8px;
+        box-sizing: border-box;
+        padding: 0 25px;
+      }
+    }
+  }
+  .app-container {
+    background: #F5F5F5;
+    .app-box {
+      max-width: 1558px;
+      margin: 0 auto;
+      padding:160px 25px 180px;
+      .application-block {
+        display: flex;
+        justify-content: space-around;
+        .step-block {
+          &.step1 {
+            .pixel-1 {opacity: 0.12}
+            .pixel-3 {opacity: 0.08}
+            .pixel-4 {opacity: 0.1; color: #08121D}
+          }
+          &.step2 {
+            .pixel-1 {opacity: 0.08}
+            .pixel-3 {opacity: 0.12}
+            .pixel-4 {opacity: 0.1; color: #08121D}
+          }
+          &.step3 {
+            .pixel-1 {opacity: 0.12}
+            .pixel-3 {opacity: 0.1; color: #08121D}
+            .pixel-4 {opacity: 0.08}
+          }
+          &.step4 {
+            .pixel-1 {opacity: 0.08}
+            .pixel-3 {opacity: 0.12}
+            .pixel-4 {opacity: 0.1; color: #08121D}
+          }
+          .step-number {
+            margin-right: 50px;
+            width: 40px;
+            text-align: center;
+          }
+          .step-image {
+            display: flex;
+            align-items: center;
+            p {
+              display: inline-block;
+              font-size: 80px;
+              line-height: 83px;
+              color: #383838;
+              opacity: 0.08;
+            }
+            .step-illustration {
+              a {
+                color: $blueColor;
+                text-decoration: underline;
+                padding-left: 10px;
+                &:hover {
+                  text-decoration: none;
+                }
+              }
+              img {
+                width: 40px;
+                height: 40px;
+              }
+            }
+          }
+          .step-text {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            .pixel-arrow {
+              position: relative;
+              transform: rotate(-135deg);
+              margin-right: 40px;
+            }
+            p {
+              font-weight: 800;
+              font-size: 18px;
+              line-height: 130%;
+              color: #000;
+            }
+          }
+        }
+      }
+      .app-donat-block {
+        display: flex;
+        justify-content: right;
+        margin: 100px 300px 0 0;
+      }
+    }
+  }
+  .donat-form-box {
+    background: no-repeat url("/img/bg/pixel-bg.jpg") 100% 100%;
+    padding: 180px 0 160px;
+    .donat-form-block {
+      background: #F5F5F5;
+      max-width: 1558px;
+      margin: 0 auto;
+      padding: 110px 160px;
+      width: auto;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.08);
+      h1 {
+        color: $blueColor;
+        font-family: $lato;
+        font-size: 50px;
+        font-weight: 800;
+        line-height: 60px;
+        margin-bottom: 45px;
+      }
+      .donat-method {
+        a {
+          color: $baseColor;
+          margin-right: 24px;
+          &.active {
+            color: $blueColor;
+            display: inline-block;
+            position: relative;
+            &:after {
+              background: #00559e;
+              content: "";
+              height: 4px;
+              left: 0;
+              bottom: -4px;
+              width: 100%;
+              position: absolute;
+            }
+          }
+        }
+      }
+    }
+    .donat-form {
+      margin-top: 45px;
+      display: flex;
+      .donat-count-block {
+        flex: 0 0 50%;
+        input {
+          position: absolute;
+          z-index: -1;
+        }
+        label {
+          font-family: $karla;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 24px;
+          line-height: 150%;
+          color: #FFF;
+          width: 141px;
+          height: 64px;
+          background: #888;
+          border-radius: 8px;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          margin: 0 16px 32px 0;
+          float: left;
+          &.active {
+            background: #00559E;
+            color: #FFF;
+          }
+          &.other-count {
+            border: 2px solid #000;
+            border-radius: 8px;
+            font-size: 16px;
+            line-height: 19px;
+            color: #848282;
+            background: #FFF;
+          }
+        }
+      }
+      .donat-info {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        width: 50%;
+        input {
+          margin-bottom: 32px;
+          width: 100%;
+          height: 64px;
+          border: 2px solid #000000;
+          border-radius: 8px;
+          box-sizing: border-box;
+          padding: 0 25px;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background: #D1D1D1;
+  padding-bottom: 20px;
+  .footer-block {
+    max-width: 1558px;
+    margin: 0 auto;
+    padding: 210px 0 30px;
+    display: flex;
+    .block-with-logo {
+      flex: 0 0 16%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 330px;
+      .logo {
+        margin-bottom: 20px;
+      }
+      p {
+        color: #000;
+        text-align: center;
+      };
+    }
+    .footer-link-block {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-bottom: 155px;
+      h3 {
+        font-family: $karla;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 130%;
+        color: #000;
+        margin-bottom: 44px;
+      }
+      ul {
+        li {
+          margin-bottom: 22px;
+          a {
+            color: #000;
+          }
+        }
+      }
+      .props ul li a {
+        color: $blueColor;
+      }
+      .contact {
+        li {
+          text-indent: 32px;
+          &:before {
+            color: #063758;
+            font-size: 20px;
+            left: -32px;
+          }
+          &.location:before {
+            left: -28px;
+          }
+        }
+        .location:before {
+          content: "\e901";
+          top: 0;
+        }
+        .mail:before {
+          content: "\e902";
+          top: 2px;
+        }
+        .phone:before {
+          content: "\e903";
+          top: 2px;
+        }
+      }
+    }
+  }
+  .copywriter {
+    display: block;
+    text-align: center;
   }
 }
 @media screen and (max-width: 1550px) {
