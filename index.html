@@ -21,8 +21,8 @@
     <div class="head-half">
         <a class="donat-button" href="#donat-form">Допомогти зараз</a>
         <ul class="navigate">
-            <li><a href="#beginningBlock">Про нас</a></li>
-            <li><a href="#about">Що ми робимо</a></li>
+            <li><a href="#about">Про нас</a></li>
+            <li><a href="#work">Що ми робимо</a></li>
             <li><a href="#help-form">Отримати допомогу</a></li>
         </ul>
         <div class="language">
@@ -47,8 +47,8 @@
             <li class="phone icomoon">+38 (063) 061 64 85</li>
         </ul>
         <ul class="navigate">
-            <li><a onclick="toggleMenu()" href="#beginningBlock">Про нас</a></li>
-            <li><a onclick="toggleMenu()" href="#about">Що ми робимо</a></li>
+            <li><a onclick="toggleMenu()" href="#about">Про нас</a></li>
+            <li><a onclick="toggleMenu()" href="#work">Що ми робимо</a></li>
             <li><a onclick="toggleMenu()" href="#about">Допомогти зараз</a></li>
             <li><a onclick="toggleMenu()" href="#help-form">Отримати допомогу</a></li>
         </ul>
@@ -61,6 +61,7 @@
         </div>
         <div class="left-blocks">
             <div class="info-block red-block">
+                <h1>Забезпечуємо<br> українських захисників<br> на передовій усім необхідним</h1>
                 <img class="bg-img" src="/img/bg/rad-bg.jpg" alt="">
                 <div class="info-content">
                     <img class="bg-img" src="/img/bg/example.jpeg" alt="Турникет">
@@ -137,17 +138,33 @@
             </div>
         </div>
         <div id="about" class="about">
-            <img src="/img/bg/about-bg.jpg" alt="">
+            <div class="about-img-block">
+                <div class="pixel-arrow l">
+                    <div class="pixel pixel-1"></div>
+                    <div class="pixel pixel-2"></div>
+                    <div class="pixel pixel-3"></div>
+                </div>
+                <div class="pixel-arrow t">
+                    <div class="pixel pixel-1"></div>
+                    <div class="pixel pixel-2"></div>
+                    <div class="pixel pixel-3"></div>
+                </div>
+                <div class="pixel-arrow r">
+                    <div class="pixel pixel-1"></div>
+                    <div class="pixel pixel-2"></div>
+                    <div class="pixel pixel-3"></div>
+                </div>
+                <div class="pixel-arrow b">
+                    <div class="pixel pixel-1"></div>
+                    <div class="pixel pixel-2"></div>
+                    <div class="pixel pixel-3"></div>
+                </div>
+                <img src="/img/bg/about-bg.jpg" alt="">
+            </div>
             <div class="about-text">
                 <h2>Про нас</h2>
                 <p>У лютому 2022 року життя мирних громадян України кардинально змінилося. Путінська армія увірвалася на нашу землю, лишаючи за собою спалені міста та тисячі закатованих і вбитих мирних жителів. Але російські загарбники не знали, що замість того, щоб миритися з цією ситуацією та підкорятися їхнім божевільним імперіалістичним ідеям, українці об’єднаються для супротиву, підтримуючи одне одного.</p>
                 <p>Відданість, прозорість та єдність – ось цінності українського народу, на яких побудований фонд <span>Mild Hills</span>. Оскільки мирний світ, який ми знали раніше, руйнується, ховаючи тисячі чоловіків, жінок і дітей під уламками їхніх власних домівок, ми не не можемо витрачати час даремно – ми маємо діяти. <span>Mild Hills</span> — це організація, яка працює над тим, щоб зробити всі процеси військового постачання швидшими, простішими та надійнішими. Бо вчасно доставлений куленепробивний жилет, хімзахист чи тепловізор – це не лише врятоване життя українського захисника. Це шанс вижити для сотень мирних жителів, за майбутнє яких він воює.</p>
-<!--                <div class="pixel-arrow">-->
-<!--                    <div class="pixel pixel-1"></div>-->
-<!--                    <div class="pixel pixel-2"></div>-->
-<!--                    <div class="pixel pixel-3"></div>-->
-<!--                    <div class="pixel pixel-4"></div>-->
-<!--                </div>-->
             </div>
         </div>
         <div class="about-arrow-box">
@@ -158,12 +175,13 @@
                 <div class="pixel pixel-4"></div>
             </div>
         </div>
-        <div class="help-image">
+        <div id="work" class="work">
             <img src="/img/help-1.jpg" alt="Допомога постраждалим">
             <img src="/img/help-2.jpg" alt="Створення центрів допомоги">
         </div>
         <div class="help-form-block">
             <form id="help-form" class="help-form">
+                <img class="pixel-picture" src="/img/pixel-picture.svg" alt="">
                 <div class="type-block">
                     <h1>Отримай допомогу</h1>
                     <p>Ви постраждали від  віїни в Україні?<br>Напишіть нам як ми можемо вам допомогти</p>
@@ -254,12 +272,13 @@
             </div>
         </div>
         <div class="donat-form-box">
-            <div class="donat-form-block">
+            <div class="donat-form-block" id="donat-form">
                 <h1>Допомогти зараз</h1>
                 <div class="donat-method">
-                    <a href="#donat-form" class="active">Банківська картка</a><a href="#donat-form">Грошовий переказ</a>
+                    <button onclick="openBank()" class="bank-button active">Банківська <br> картка</button>
+                    <button onclick="openRemittance()" class="remittance-button">Грошовий <br> переказ</button>
                 </div>
-                <form id="donat-form" class="donat-form">
+                <form class="donat-form active">
                     <div class="donat-count-block">
                         <input type="radio" id="donat20" name="type" value="20">
                         <label for="donat20" class="active">20 грн.</label>
@@ -281,6 +300,61 @@
                         <button class="donat-button" type="submit">Допомогти</button>
                     </div>
                 </form>
+                <div class="remittance">
+                    <div class="remittance-type">
+                        <button class="active">₴</button>
+                        <button>$</button>
+                        <button>€</button>
+                        <button>zł</button>
+                        <button>£</button>
+                    </div>
+                    <h3>Реквізити підприємства/Company details</h3>
+                    <div class="row">
+                        <p class="name">Назва підприємства/company Name</p>
+                        <p class="value">БФ МIЛД ХIЛС БО</p>
+                    </div>
+                    <div class="row">
+                        <p class="name">IBAN Code</p>
+                        <p class="value">UA083052990000026002026222487</p>
+                    </div>
+                    <div class="row">
+                        <p class="name">Назва банку/Name of the bank</p>
+                        <p class="value">JSC CB "PRIVATBANK", 1D HRUSHEVSKOHO STR., KYIV, 01001, UKRAINE</p>
+                    </div>
+                    <div class="row">
+                        <p class="name">SWIFT code банку/Bank SWIFT Code</p>
+                        <p class="value">PBANUA2X</p>
+                    </div>
+                    <div class="row">
+                        <p class="name">Адреса підприємства/Company address</p>
+                        <p class="value">UA 03022 м Київ вул Василькiвська б.100А кв.319</p>
+                    </div>
+                    <h3>Банки кореспонденти / Correspondent banks</h3>
+                    <div class="row">
+                        <p class="name">Рахунок у банку-кореспонденті/Account in the correspondent bank</p>
+                        <p class="value">400886700401</p>
+                    </div>
+                    <div class="row">
+                        <p class="name">SWIFT Code банку-кореспондента/SWIFT Code of the correspondent bank</p>
+                        <p class="value">COBADEFF</p>
+                    </div>
+                    <div class="row">
+                        <p class="name">Банк-кореспондент/Correspondent bank</p>
+                        <p class="value">Commerzbank AG, Frankfurt am Main, Germany</p>
+                    </div>
+                    <div class="row">
+                        <p class="name">Рахунок у банку-кореспонденті/Account in the correspondent bank</p>
+                        <p class="value">6231605145</p>
+                    </div>
+                    <div class="row">
+                        <p class="name">SWIFT Code банку-кореспондента/SWIFT Code of the correspondent bank</p>
+                        <p class="value">CHASDEFX</p>
+                    </div>
+                    <div class="row">
+                        <p class="name">Банк-кореспондент/Correspondent bank</p>
+                        <p class="value">J.P.MORGAN AG, FRANKFURT AM MAIN, GERMANY</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -297,7 +371,7 @@
                 <h3>Інформація</h3>
                 <ul>
                     <li><a href="#about">Про нас</a></li>
-                    <li><a href="#help-form">Благодійна платформа</a></li>
+                    <li><a href="#work">Благодійна платформа</a></li>
                     <li><a href="#donat-form">Допомогти зараз</a></li>
                     <li><a href="#help-form">Отримати допомогу</a></li>
                 </ul>

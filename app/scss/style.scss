@@ -4,6 +4,7 @@
 $lato: 'Lato', sans-serif;
 $karla: 'Karla', sans-serif;
 $openSans: 'Open Sans', sans-serif;
+$anybody: 'Anybody', cursive;
 $baseColor: #888;
 $yellowColor: #E0F300;
 $blueColor: #00559E;
@@ -79,6 +80,7 @@ h2 {
 .donat-button {
   font-weight: 700;
   background: #063758;
+  box-shadow: 0px 10px 23px rgba(0, 85, 158, 0.3);
   border: 4px solid $yellowColor;
   width: 299px;
   height: 56px;
@@ -258,6 +260,9 @@ header {
     }
     .red-block {
       height: 34%;
+      h1 {
+        display: none;
+      }
       .info-content {
         background: #AE0F0F;
         flex-direction: row;
@@ -316,8 +321,6 @@ header {
       display: flex;
       height: 66%;
     }
-    .left-info-block {
-    }
   }
   .right-blocks {
     .blue-block {
@@ -362,7 +365,8 @@ header {
     padding: 120px 0 0 180px;
     height: 100vh;
     img {
-      width: auto;
+      object-fit: contain;
+      width: 42%;
       height: auto;
       max-height: 99%;
       margin-right: 150px;
@@ -386,11 +390,50 @@ header {
   .about {
     display: flex;
     padding: 120px 0 0 180px;
-    img {
-      margin: 115px 150px 0 0;
-      max-width: 560px;
-      height: auto;
-      object-fit: contain;
+    align-items: flex-start;
+    .about-img-block {
+      position: relative;
+      margin: 115px 150px 0 25px;
+      flex: 0 0 40%;
+      .pixel-arrow {
+        &.l {
+          left: -68px;
+          top: 30px;
+          transform: rotate(90deg);
+        }
+        &.t {
+          top: -75px;
+          left: 0;
+          transform: rotate(270deg);
+        }
+        &.r {
+          bottom: 30px;
+          right: -73px;
+        }
+        &.b {
+          bottom: -73px;
+          right: 0;
+          transform: rotate(90deg);
+        }
+      }
+      .pixel-1 {
+        background: #040404;
+        opacity: 0.24;
+      }
+      .pixel-2 {
+        background: rgba(4, 4, 4, 0.24);
+        opacity: 0.8;
+      }
+      .pixel-3 {
+        background: #08121D;
+        opacity: 0.18;
+      }
+      img {
+        max-width: 560px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
     }
     .about-text {
       padding-right: 180px;
@@ -412,7 +455,7 @@ header {
       transform: rotate(-45deg);
     }
   }
-  .help-image {
+  .work {
     display: flex;
     padding: 0 25px 150px;
     img {
@@ -423,15 +466,27 @@ header {
       }
     }
   }
+  .help-form-block {
+    padding: 0 15px;
+  }
   .help-form {
     background: #F5F5F5;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04), 0 16px 24px rgba(0, 0, 0, 0.08);
     max-width: 1558px;
     margin: 0 auto 280px;
     padding: 110px 160px;
     display: flex;
+    position: relative;
+    .pixel-picture {
+      position: absolute;
+      width: 96px;
+      top: -48px;
+      left: 50%;
+      margin-left: -48px;
+    }
     .type-block {
       width: 50%;
+      padding-right: 20px;
       h1 {
         font-size: 50px;
         line-height: 60px;
@@ -507,6 +562,7 @@ header {
             p {
               display: inline-block;
               font-size: 80px;
+              font-family: $anybody;
               line-height: 83px;
               color: #383838;
               opacity: 0.08;
@@ -552,8 +608,8 @@ header {
     }
   }
   .donat-form-box {
-    background: no-repeat url("/img/bg/pixel-bg.jpg") 100% 100%;
-    padding: 180px 0 160px;
+    background: url("/img/bg/pixel-bg.jpg") 0 0;
+    padding: 180px 15px 160px;
     .donat-form-block {
       background: #F5F5F5;
       max-width: 1558px;
@@ -570,6 +626,29 @@ header {
         margin-bottom: 45px;
       }
       .donat-method {
+        button {
+          margin-right: 24px;
+          br {
+            display: none;
+          }
+          &:hover {
+            color: $blueColor;
+          }
+          &.active {
+            color: $blueColor;
+            display: inline-block;
+            position: relative;
+            &:after {
+              background: #00559e;
+              content: "";
+              height: 4px;
+              left: 0;
+              bottom: -4px;
+              width: 100%;
+              position: absolute;
+            }
+          }
+        }
         a {
           color: $baseColor;
           margin-right: 24px;
@@ -590,9 +669,17 @@ header {
         }
       }
     }
-    .donat-form {
-      margin-top: 45px;
+    .donat-form , .remittance {
+      display: none;
+    }
+    .donat-form.active {
       display: flex;
+    }
+    .remittance.active {
+      display: block;
+    }
+  .donat-form {
+      margin-top: 45px;
       .donat-count-block {
         flex: 0 0 50%;
         input {
@@ -645,6 +732,51 @@ header {
         }
       }
     }
+    .remittance {
+      margin-top: 45px;
+      .remittance-type {
+        margin-bottom: 50px;
+        button {
+          width: 64px;
+          height: 60px;
+          background: $baseColor;;
+          border-radius: 8px;
+          margin: 0 15px 15px 0;
+          color: #fff;
+          &.active, &:hover {
+            background: $blueColor;
+          }
+        }
+      }
+      h3 {
+        font-family: $karla;
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 150%;
+        margin-top: 24px;
+      }
+      .row {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $baseColor;
+        .name {
+          width: 40%;
+          font-size: 12px;
+          line-height: 14px;
+          font-family: 'Helvetica', sans-serif;
+          font-weight: 400;
+          color: #444;
+        }
+        .value {
+          font-family: 'Helvetica', sans-serif;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 18px;
+          color: #383838;
+        }
+      }
+    }
   }
 }
 
@@ -654,7 +786,7 @@ footer {
   .footer-block {
     max-width: 1558px;
     margin: 0 auto;
-    padding: 210px 0 30px;
+    padding: 210px 20px 30px;
     display: flex;
     .block-with-logo {
       flex: 0 0 16%;
@@ -745,6 +877,18 @@ footer {
       }
     }
   }
+  footer .footer-block {
+    .block-with-logo {
+      margin-right: 0;
+      flex: 0 0 20%;
+    }
+    .footer-link-block {
+      justify-content: flex-end;
+      &>div {
+        margin-right: 50px;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1330px) {
@@ -752,6 +896,30 @@ footer {
     .donat-button ,
     .navigate li {
       margin-right: 20px;
+    }
+  }
+  .wrapper {
+    .beginning, .about {
+      padding-left: 50px;
+      img {
+        margin-right: 100px;
+      }
+      .beginning-text, .about-text {
+        padding-right: 80px;
+      }
+      .about-img-block {
+        margin-right: 100px;
+      }
+    }
+    .help-form {
+      padding: 110px 80px;
+      justify-content: space-around;
+      .type-block, .writer-info {
+        width: auto;
+      }
+    }
+    .app-container .app-box {
+      padding: 100px 25px 120px;
     }
   }
 }
@@ -765,6 +933,57 @@ footer {
       margin-left: 250px;
     }
   }
+  .wrapper {
+    .help-form {
+      .type-block {
+        h1 {
+          font-size: 40px;
+          margin-bottom: 35px;
+        }
+        p {
+          font-size: 24px;
+          margin-bottom: 35px;
+        }
+      }
+    }
+    .app-container .app-box {
+      .application-block {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .step-block {
+          width: 50%;
+          margin-bottom: 50px;
+          padding-left: 80px;
+        }
+      }
+      .app-donat-block {
+        justify-content: center;
+        margin: 100px 0 0;
+      }
+    }
+    .donat-form-box .donat-form-block {
+      padding: 80px 50px;
+    }
+    .donat-form-box .remittance .row .name {
+      width: 35%;
+      padding-right: 20px;
+    }
+  }
+  footer .footer-block {
+    padding: 40px 20px 30px;
+    flex-direction: column;
+    justify-content: center;
+    .block-with-logo {
+      margin-bottom: 40px;
+    }
+    .footer-link-block {
+      justify-content: space-around;
+      margin-bottom: 0;
+      &>div {
+        margin-right: 20px;
+      }
+    }
+  }
 }
 
 
@@ -774,10 +993,66 @@ footer {
       flex-direction: column;
     }
   }
+  .presentation-block .left-blocks {
+    .info-block {
+      width: 100%;
+      &.red-block .info-content {
+        img {
+          margin-bottom: 15px;
+          margin-right: 10px;
+        }
+      }
+    }
+    .bottom-info-block .left-info-block {
+      display: none;
+    }
+  }
   .presentation-block {
     .right-blocks .blue-block h1 {
       font-size: 30px;
       line-height: 46px;
+    }
+  }
+  .wrapper {
+    .beginning {
+      align-items: flex-start;
+      img {
+        margin-right: 40px;
+      }
+      .beginning-text {
+        padding:0 50px 0 0;
+        p {
+          font-size: 14px;
+          margin-top: 40px;
+        }
+        .pixel-arrow {
+          left: 0;
+          bottom: -68px;
+        }
+        .pixel-cross {
+          right: 20px;
+          top: 0;
+        }
+      }
+    }
+    .about {
+      padding: 120px 50px 0;
+      flex-direction: column;
+      .about-img-block {
+        margin: 0 auto 80px;
+        img {
+          margin: 0 auto;
+        }
+      }
+      .about-text {
+        padding-right: 0;
+        h2 {
+          margin-bottom: 40px;
+        }
+      }
+    }
+    .about-arrow-box {
+      margin: 80px auto;
     }
   }
 }
@@ -789,6 +1064,45 @@ footer {
     }
     .head-contact {
       margin-left: 190px;
+    }
+  }
+  .wrapper {
+    .help-form {
+      padding: 110px 25px;
+      .type-block {
+        h1 {
+          font-size: 28px;
+          margin-bottom: 20px;
+        }
+        p {
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .app-container .app-box {
+      .application-block {
+        .step-block {
+          padding-left: 0;
+        }
+      }
+    }
+    .donat-form-box .remittance {
+      h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        padding-right: 10px;
+      }
+      .row {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        height: auto;
+        padding: 5px 10px;
+        .name {
+          width: 100%;
+        }
+      }
     }
   }
 }
@@ -881,6 +1195,309 @@ footer {
           margin-bottom: 25px;
           a:hover {
             text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  .presentation-block {
+    .left-blocks {
+      flex: 0 0 30%;
+      .red-block {
+        height: 100%;
+        &:hover {
+          .info-content {
+            display: none;
+          }
+        }
+      }
+      .bottom-info-block {
+        display: none;
+      }
+    }
+    .right-blocks {
+      flex: 0 0 70%;
+      .blue-block {
+        padding: 50px 20px 0;
+        height: 100%;
+        h1 {
+          font-size: 32px;
+          line-height: 46px;
+          margin-bottom: 30px;
+        }
+        p {
+          margin-bottom: 45px;
+          line-height: 24px;
+          color: #d9edff;
+        }
+        .donat-button {
+          width: 300px;
+        }
+      }
+      .colorless-block {
+        display: none;
+      }
+    }
+  }
+  .pixel-arrow ,
+  .pixel-cross {
+    .pixel {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  .pixel-arrow {
+    width: 32px;
+    height: 32px;
+  }
+  .pixel-cross {
+    width: 48px;
+    height: 48px;
+  }
+  .wrapper {
+    .beginning {
+      padding: 40px 25px;
+      .beginning-text {
+        .pixel-arrow {
+          left: 0;
+          bottom: -56px;
+        }
+        .pixel-cross {
+          right: 10px;
+          top: 15px;
+        }
+      }
+    }
+    .about {
+      padding: 120px 25px 0;
+    }
+    .work {
+      flex-direction: column;
+      img {
+        width: 100% !important;
+        margin: 0;
+      }
+    }
+    .help-form {
+      flex-direction: column;
+      margin-bottom: 80px;
+      .type-block {
+        margin-bottom: 30px;
+      }
+    }
+    .app-container .app-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .application-block {
+        flex-direction: column;
+        .step-block {
+          width: auto;
+        }
+      }
+    }
+    .donat-form-box {
+      padding-top: 80px;
+      .donat-form-block {
+        h1 {
+          font-size: 24px;
+          line-height: 29px;
+          margin-bottom: 25px;
+        }
+        padding: 50px 15px;
+        .donat-form {
+          flex-direction: column;
+          align-items: center;
+          .donat-count-block {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            label {
+              font-size: 16px;
+            }
+          }
+          .donat-info {
+            width: 100%;
+            .donat-button {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  footer {
+    .footer-block {
+      .footer-link-block {
+        flex-direction: column;
+        h3 {
+          margin-bottom: 15px;
+        }
+        ul {
+          margin-bottom: 30px;
+          li {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .presentation-block {
+    flex-direction: column;
+    .left-blocks {
+      height: 30%;
+      .red-block h1 {
+        display: block;
+        font-size: 24px;
+        line-height: 29px;
+        color: #fff;
+        position: absolute;
+        left: 25px;
+        bottom: 20px;
+      }
+    }
+    .right-blocks {
+      flex: 0 0 70%;
+      .blue-block {
+        padding: 15px 20px 0;
+        height: 100%;
+        h1 {
+          display: none;
+        }
+        h3 {
+          font-size: 14px;
+          line-height: 16px;
+        }
+        p {
+          margin-bottom: 25px;
+          line-height: 24px;
+          color: #d9edff;
+        }
+        .donat-button {
+          max-width: 300px;
+          width: 100%;
+        }
+      }
+      .colorless-block {
+        display: none;
+      }
+    }
+  }
+  .wrapper {
+    .beginning {
+      height: auto;
+      padding: 40px 25px;
+      img {
+        display: none;
+      }
+      .beginning-text {
+        p {
+          font-size: 16px;
+          strong {
+            color: #063758;
+          }
+        }
+      }
+    }
+    .about {
+      .about-img-block .pixel-arrow {
+        display: none;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 425px) {
+  .presentation-block {
+    .right-blocks .blue-block .donat-button {
+        max-width:100%;
+    }
+  }
+  .wrapper {
+    .beginning .beginning-text {
+      p {
+        font-size: 16px;
+        strong {
+          color: #063758;
+        }
+      }
+      .pixel-cross {
+        right: 0;
+      }
+    }
+    .work {
+      padding: 0 0 230px;
+    }
+    .help-form {
+      padding-top: 50px;
+      padding-bottom: 40px;
+      margin-bottom: 80px;
+      .pixel-picture {
+        width: 80px;
+        top: -40px;
+        margin-left: -40px;
+      }
+      .type-block {
+        h1 {
+          font-size: 24px;
+          line-height: 29px;
+        }
+        p {
+          font-size: 16px;
+          line-height: 120%;
+        }
+        label {
+          font-size: 16px;
+          line-height: 150%;
+        }
+        input {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      .writer-info {
+        .donat-button {
+          width: 100%;
+        }
+      }
+    }
+    .app-container .app-box {
+      padding: 30px 25px 40px;
+      .application-block .step-block .step-text {
+        .pixel-arrow {
+          display: none;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+      .app-donat-block {
+        margin-top: 0;
+        width: 100%;
+        .donat-button {
+          width: 100%;
+        }
+      }
+    }
+    .donat-form-box {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      .donat-form-block {
+        .donat-method button {
+          text-align: left;
+          br {
+            display: inline-block;
+          }
+        }
+        .donat-form .donat-count-block {
+          margin-bottom: 40px;
+          label {
+            width: 121px;
+            margin: 0 8px 8px 0;
           }
         }
       }
