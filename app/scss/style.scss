@@ -130,6 +130,18 @@ header {
     border-radius: 0 0 8px 8px;
     z-index: 200;
     padding-top: 24px;
+    .slogan {
+      position: relative;
+      width: 100%;
+      p {
+        position: absolute;
+        top: -5px;
+        width: 250px;
+        left: 162px;
+        color: #fff;
+        font-family: $openSans;
+      }
+    }
   }
   .navigate {
     display: flex;
@@ -243,18 +255,22 @@ header {
         flex-direction: column;
         left: 0;
         top: 0;
-        padding: 20px;
+        padding: 15px;
         height: 100%;
+        word-break: break-word;
         img {
           margin-bottom: 20px;
-          max-width: 170px;
+          max-width: 100%;
           height: auto;
           max-height: 45%;
         }
         p {
-          color: #fff;
+          margin-bottom: 25px;
           font-size: 12px;
           line-height: 14px;
+          &.title {
+            font-weight: 700;
+          }
         }
       }
     }
@@ -266,11 +282,12 @@ header {
       .info-content {
         background: #AE0F0F;
         flex-direction: row;
+        color: #fff;
         img {
           max-width: 170px;
           max-height: 50%;
           width: 100%;
-          margin: 0 40px 0 0;
+          margin: 0 15px 0 0;
         }
       }
       &:hover {
@@ -307,6 +324,7 @@ header {
     .black-block {
       .info-content {
         background: #000;
+        color: #fff;
         img {
           object-fit: cover;
         }
@@ -702,10 +720,6 @@ header {
           display: flex;
           margin: 0 16px 32px 0;
           float: left;
-          &.active {
-            background: #00559E;
-            color: #FFF;
-          }
           &.other-count {
             border: 2px solid #000;
             border-radius: 8px;
@@ -714,6 +728,10 @@ header {
             color: #848282;
             background: #FFF;
           }
+        }
+        input:checked+label {
+          background: #00559E;
+          color: #FFF;
         }
       }
       .donat-info {
@@ -736,14 +754,25 @@ header {
       margin-top: 45px;
       .remittance-type {
         margin-bottom: 50px;
-        button {
-          width: 64px;
-          height: 60px;
-          background: $baseColor;;
-          border-radius: 8px;
-          margin: 0 15px 15px 0;
-          color: #fff;
-          &.active, &:hover {
+        form {
+          display: flex;
+          flex-wrap: wrap;
+          input {
+            position: absolute;
+            z-index: -1;
+          }
+          label {
+            width: 64px;
+            height: 60px;
+            background: $baseColor;;
+            border-radius: 8px;
+            margin: 0 15px 15px 0;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          input:checked+label {
             background: $blueColor;
           }
         }
@@ -1101,6 +1130,7 @@ footer {
         padding: 5px 10px;
         .name {
           width: 100%;
+          margin-bottom: 5px;
         }
       }
     }
@@ -1449,6 +1479,9 @@ footer {
         p {
           font-size: 16px;
           line-height: 120%;
+        }
+        .input-box {
+          display: flex;
         }
         label {
           font-size: 16px;
