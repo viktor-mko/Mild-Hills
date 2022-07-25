@@ -184,21 +184,21 @@ header {
     span {
       display: inline-block;
     }
-    .ukr ,
+    .ua ,
     .en {
       width: 27px;
       height: 18px;
       border-radius: 3px;
       position: relative;;
     }
-    .ukr {
+    .ua {
       background: no-repeat url(/img/icon/Flag_of_Ukraine.jpg);
       margin-right: 15px;
     }
     .en {
       background: no-repeat url(/img/icon/Flag_of_the_United_Kingdom.jpg);
     }
-    .ukr.active:after ,
+    .ua.active:after ,
     .en.active:after {
       content: '';
       position: absolute;
@@ -393,7 +393,6 @@ header {
       position: relative;
       padding:100px 180px 0 0;
       p {
-        font-size: 14px;
         margin-top: 40px;
       }
       .pixel-arrow {
@@ -412,7 +411,7 @@ header {
     .about-img-block {
       position: relative;
       margin: 115px 150px 0 25px;
-      flex: 0 0 40%;
+      flex: 0 0 35%;
       .pixel-arrow {
         &.l {
           left: -68px;
@@ -426,7 +425,7 @@ header {
         }
         &.r {
           bottom: 30px;
-          right: -73px;
+          right: -72px;
         }
         &.b {
           bottom: -73px;
@@ -1192,7 +1191,7 @@ footer {
           font-size: 16px;
         }
       }
-      .ukr.active:after ,
+      .ua.active:after ,
       .en.active:after {
         bottom: -8px;
       }
