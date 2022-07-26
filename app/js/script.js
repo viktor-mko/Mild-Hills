@@ -27,15 +27,15 @@ function openRemittance() {
 }
 
 function changeLanguage() {
-    const ua = document.querySelector(".ua");
-    const en = document.querySelector(".en");
+    const ua = document.querySelectorAll(".ua");
+    const en = document.querySelectorAll(".en");
     const language = this.getAttribute("key");
     if (language === "ua") {
-        en.classList.remove("active");
-        ua.classList.add("active");
+        ua.forEach(element => element.classList.add("active"));
+        en.forEach(element => element.classList.remove("active"));
     } else {
-        ua.classList.remove("active");
-        en.classList.add("active");
+        ua.forEach(element => element.classList.remove("active"));
+        en.forEach(element => element.classList.add("active"));
     }
     const multilingual = document.querySelectorAll(".multilingual");
     multilingual.forEach(
