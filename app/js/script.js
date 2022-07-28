@@ -1,4 +1,4 @@
-const donatForm = document.querySelector(".donat-form");
+const donatForm = document.querySelector(".donate-form");
 const remittance = document.querySelector(".remittance");
 const remittanceButton = document.querySelector(".remittance-button");
 const bunkButton = document.querySelector(".bank-button");
@@ -39,7 +39,13 @@ function changeLanguage() {
     }
     const multilingual = document.querySelectorAll(".multilingual");
     multilingual.forEach(
-        element=>element.innerHTML = (arrLang[language][element.getAttribute('key')])
+        (element) => {
+            if (element.classList.contains('input')) {
+                element.setAttribute("placeholder", arrLang[language][element.getAttribute('key')])
+            } else {
+                element.innerHTML = (arrLang[language][element.getAttribute('key')])
+            }
+        }
     )
 };
 
