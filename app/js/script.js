@@ -7,9 +7,11 @@ function toggleMenu() {
     const menuButton = document.querySelector(".burger-menu");
     const mobileMenu = document.querySelector(".mobile-menu");
     const mobileLogo = document.querySelector(".mobile-header .logo-block");
+    const mobileHeader = document.querySelector("header");
     menuButton.classList.toggle("active");
     mobileMenu.classList.toggle("active");
     mobileLogo.classList.toggle("active");
+    mobileHeader.classList.toggle("menu-active");
 }
 
 function openBank() {

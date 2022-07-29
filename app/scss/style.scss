@@ -1142,6 +1142,11 @@ footer {
   header {
     height: 60px;
     padding: 0 16px;
+    &.menu-active {
+      width: 100%;
+      position: fixed;
+      z-index: 300;
+    }
     .head-half {
       display: none;
     }
@@ -1201,7 +1206,7 @@ footer {
     .mobile-menu {
       height: calc(100vh - 60px);
       width: 100%;
-      position: absolute;
+      position: fixed;
       top: 60px;
       left: 0;
       z-index: 100;
