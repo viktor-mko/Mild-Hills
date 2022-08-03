@@ -1528,6 +1528,7 @@ footer {
       .donate-form-block {
         .donate-method button {
           text-align: left;
+          padding-bottom: 8px;
           br {
             display: inline-block;
           }
@@ -1535,8 +1536,11 @@ footer {
         .donate-form .donate-count-block {
           margin-bottom: 40px;
           label {
-            width: 121px;
-            margin: 0 8px 8px 0;
+            width: 48%;
+            margin: 0 0 8px;
+            &:nth-of-type(odd) {
+              margin-right: 8px;;
+            }
           }
         }
       }
