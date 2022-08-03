@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width,initial-scale=1'/>
     <link rel="stylesheet"  href="dist/style.css">
-    <script src="dist/script.js"></script>
     <title>Mild Hills</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
 <header>
@@ -14,27 +20,31 @@
             <img src="/img/logo-svg.svg" alt="Mild Hills">
         </div>
         <ul class="head-contact">
-            <li class="location icomoon">Україна, м. Київ</li>
-            <li class="phone icomoon">+38 (063) 061 64 85</li>
+            <li class="location icomoon">
+                <a href="https://goo.gl/maps/wRw9w8gutupgbp8r6" class="multilingual" key="header-address" target="_blank">Україна, м. Київ</a>
+            </li>
+            <li class="phone icomoon">
+                <a href="tel:+380630616485">+38 (063) 061 64 85</a>
+            </li>
         </ul>
     </div>
     <div class="head-half">
-        <a class="donat-button" href="#donat-form">Допомогти зараз</a>
+        <a class="donate-button multilingual" href="#donate-form" key="header-donate-button">Допомогти зараз</a>
         <ul class="navigate">
-            <li><a href="#about">Про нас</a></li>
-            <li><a href="#work">Що ми робимо</a></li>
-            <li><a href="#help-form">Отримати допомогу</a></li>
+            <li><a class="multilingual" key="navigate-about" href="#about">Про нас</a></li>
+            <li><a class="multilingual" key="navigate-beginning" href="#work">Що ми робимо</a></li>
+            <li><a class="multilingual" key="navigate-get-help" href="#help-form">Отримати допомогу</a></li>
         </ul>
         <div class="language">
-            <span class="ukr active"></span>
-            <span class="en"></span>
+            <span class="translate ua active" key="ua"></span>
+            <span class="translate en" key="en"></span>
         </div>
     </div>
     <div class="mobile-header">
         <span onclick="toggleMenu()" class="burger-menu icomoon"></span>
         <div class="language">
-            <span class="ukr active"></span>
-            <span class="en"></span>
+            <span class="translate ua active" key="ua"></span>
+            <span class="translate en" key="en"></span>
         </div>
         <div class="logo-block">
             <img class="white-logo" src="/img/logo-svg.svg" alt="Mild Hills">
@@ -43,14 +53,18 @@
     </div>
     <div class="mobile-menu">
         <ul class="head-contact">
-            <li class="location icomoon">Україна, м. Київ</li>
-            <li class="phone icomoon">+38 (063) 061 64 85</li>
+            <li class="location icomoon">
+                <a href="https://goo.gl/maps/wRw9w8gutupgbp8r6" class="multilingual" key="header-address" target="_blank">Україна, м. Київ</a>
+            </li>
+            <li class="phone icomoon">
+                <a href="tel:+380630616485">+38 (063) 061 64 85</a>
+            </li>
         </ul>
         <ul class="navigate">
-            <li><a onclick="toggleMenu()" href="#about">Про нас</a></li>
-            <li><a onclick="toggleMenu()" href="#work">Що ми робимо</a></li>
-            <li><a onclick="toggleMenu()" href="#about">Допомогти зараз</a></li>
-            <li><a onclick="toggleMenu()" href="#help-form">Отримати допомогу</a></li>
+            <li><a class="multilingual" key="navigate-about" onclick="toggleMenu()" href="#about">Про нас</a></li>
+            <li><a class="multilingual" key="navigate-beginning" onclick="toggleMenu()" href="#work">Що ми робимо</a></li>
+            <li><a class="multilingual" key="navigate-donate-now" onclick="toggleMenu()" href="#about">Допомогти зараз</a></li>
+            <li><a class="multilingual" key="navigate-get-help" onclick="toggleMenu()" href="#help-form">Отримати допомогу</a></li>
         </ul>
     </div>
 </header>
@@ -61,11 +75,14 @@
         </div>
         <div class="left-blocks">
             <div class="info-block red-block">
-                <h1>Забезпечуємо<br> українських захисників<br> на передовій усім необхідним</h1>
+                <h1 class="multilingual" key="main-title">Забезпечуємо<br> українських захисників<br> на передовій усім необхідним</h1>
                 <img class="bg-img" src="/img/bg/rad-bg.jpg" alt="">
                 <div class="info-content">
-                    <img class="bg-img" src="/img/bg/example.jpeg" alt="Турникет">
-                    <p>Тактический кровоостанавливающий жгут Black Front - высокоэффективное решение для остановки различных видов кровотечений нижних и верхних конечностей</p>
+                    <img class="bg-img" src="/img/example.svg" alt="Турникет">
+                    <div class="info-content-text">
+                        <p class="multilingual" key="red-example-description1">Тактический кровоостанавливающий жгут Black Front - для остановки крови</p>
+                        <p class="multilingual" key="red-example-description2">Тактический кровоостанавливающий жгут Black Front - для остановки крови</p>
+                    </div>
                 </div>
             </div>
             <div class="bottom-info-block">
@@ -73,33 +90,42 @@
                     <div class="info-block yellow-block">
                         <img class="bg-img" src="/img/bg/yellow-bg.jpg" alt="">
                         <div class="info-content">
-                            <img src="/img/bg/example.jpeg" alt="Турникет">
-                            <p>Тактический кровоостанавливающий жгут Black Front - для остановки крови</p>
+                            <img src="/img/example.svg" alt="Турникет">
+                            <div class="info-content-text">
+                                <p class="title multilingual" key="yellow-example-title">Турнікет тактичний</p>
+                                <p class="multilingual" key="yellow-example-description">Тактический кровоостанавливающий жгут Black Front - для остановки крови</p>
+                            </div>
                         </div>
                     </div>
                     <div class="info-block grey-block">
                         <img class="bg-img" src="/img/bg/injured-bg.jpg" alt="">
                         <div class="info-content">
-                            <img src="/img/bg/example.jpeg" alt="Турникет">
-                            <p>Тактический кровоостанавливающий жгут Black Front - высокоэффективное решение для остановки различных видов кровотечений нижних и верхних конечностей</p>
+                            <img src="/img/example.svg" alt="Турникет">
+                            <div class="info-content-text">
+                                <p class="title multilingual" key="grey-example-title">Турнікет тактичний</p>
+                                <p class="multilingual" key="grey-example-description">Тактический кровоостанавливающий жгут Black Front - для остановки крови</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="info-block black-block">
                     <img class="bg-img" src="/img/bg/ray-bg.jpg" alt="">
                     <div class="info-content">
-                        <img src="/img/bg/example.jpeg" alt="Турникет">
-                        <p>Тактический кровоостанавливающий жгут Black Front - высокоэффективное решение для остановки различных видов кровотечений нижних и верхних конечностей</p>
+                        <img src="/img/example.svg" alt="Турникет">
+                        <div class="info-content-text">
+                            <p class="multilingual" key="black-example-description1">Тактический кровоостанавливающий жгут Black Front - для остановки крови</p>
+                            <p class="multilingual" key="black-example-description2">Тактический кровоостанавливающий жгут Black Front - для остановки крови</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="right-blocks">
             <div class="blue-block">
-                <h1>Забезпечуємо<br> українських захисників<br> на передовій усім необхідним</h1>
-                <h3>Mild Hills — некомерційний фонд</h3>
-                <p>Вся суть фонду, створеного колишніми комбатантами та небайдужими<br> людьми, полягає в тому, щоб забезпечити необхідним захистом тих,<br> хто бореться за майбутнє своєї нації.</p>
-                <a class="donat-button" href="#donat-form">Внести благодійний внесок</a>
+                <h1 class="multilingual" key="main-title">Забезпечуємо<br> українських захисників<br> на передовій усім необхідним</h1>
+                <h3 class="multilingual" key="mildhills-fund">Mild Hills — некомерційний фонд</h3>
+                <p class="multilingual" key="mildhills-description">Наша міссія полягає в забезпеченні усім необхідним тих,<br> хто кожного дня ризикує своїм життям заради майбутнього української нації.</p>
+                <a class="donate-button multilingual" key="main-donate-button" href="#donate-form">Підтримати</a>
             </div>
             <div class="colorless-block">
                 <div class="left-image">
@@ -115,9 +141,9 @@
         <div id="beginningBlock" class="beginning">
             <img src="/img/bg/begin-bg.jpg" alt="">
             <div class="beginning-text">
-                <h2>Як це почалося</h2>
-                <p><strong>Mild Hills</strong> — некомерційний фонд, який має на меті забезпечити українських захисників на передовій необхідними боєприпасами, хімічним захистом та амуніцією. Оскільки армія противника зарекомендувала себе як недобросовісна і нездатна дотримуватися Женевської конвенції, українські військові мають бути готовими до будь-яких видів атак, у тому числі з використанням хімічної чи навіть ядерної зброї. Вся суть фонду, створеного колишніми комбатантами та небайдужими людьми, полягає в тому, щоб забезпечити необхідним захистом тих, хто бореться за майбутнє своєї нації.</p>
-                <p>Важко повірити, що у 21 столітти одна з найбільших країн Європи може потерпати від воєнної агресіх подібного масштабу. З перших днів війни, віроломно розпочатої Росією, українці об’єдналися заради єдиної спільної мети – вижити та захистити все, що вони люблять і цінують. Це спровокувало безпрецедентну хвилю низової активності та самоорганізації, і фонд Mild Hills виник як природна частина цього руху. Весь досвід з питань військового постачання та санітарних потреб, набутий за 8 років війни на Донбасі, зробив українців повністю готовими до повномасштабного вторгнення – і робота таких організацій як Mild Hills дає надію, що якомога більше героїв цієї війни зможуть на власні очі побачити перемогу.</p>
+                <h2 class="multilingual" key="beginning-title">Як це почалося</h2>
+                <p class="multilingual" key="beginning-first-indent"><strong>Mild Hills</strong> — некомерційний фонд, який має на меті забезпечити українських захисників на передовій необхідними боєприпасами, хімічним захистом та амуніцією. Оскільки армія противника зарекомендувала себе як недобросовісна і нездатна дотримуватися Женевської конвенції, українські військові мають бути готовими до будь-яких видів атак, у тому числі з використанням хімічної чи навіть ядерної зброї. Вся суть фонду, створеного колишніми комбатантами та небайдужими людьми, полягає в тому, щоб забезпечити необхідним захистом тих, хто бореться за майбутнє своєї нації.</p>
+                <p class="multilingual" key="beginning-second-indent">Важко повірити, що у 21 столітти одна з найбільших країн Європи може потерпати від воєнної агресіх подібного масштабу. З перших днів війни, віроломно розпочатої Росією, українці об’єдналися заради єдиної спільної мети – вижити та захистити все, що вони люблять і цінують. Це спровокувало безпрецедентну хвилю низової активності та самоорганізації, і фонд Mild Hills виник як природна частина цього руху. Весь досвід з питань військового постачання та санітарних потреб, набутий за 8 років війни на Донбасі, зробив українців повністю готовими до повномасштабного вторгнення – і робота таких організацій як Mild Hills дає надію, що якомога більше героїв цієї війни зможуть на власні очі побачити перемогу.</p>
                 <div class="pixel-arrow">
                     <div class="pixel pixel-1"></div>
                     <div class="pixel pixel-2"></div>
@@ -139,32 +165,34 @@
         </div>
         <div id="about" class="about">
             <div class="about-img-block">
-                <div class="pixel-arrow l">
-                    <div class="pixel pixel-1"></div>
-                    <div class="pixel pixel-2"></div>
-                    <div class="pixel pixel-3"></div>
+                <div class="about-img-box">
+                    <div class="pixel-arrow l">
+                        <div class="pixel pixel-1"></div>
+                        <div class="pixel pixel-2"></div>
+                        <div class="pixel pixel-3"></div>
+                    </div>
+                    <div class="pixel-arrow t">
+                        <div class="pixel pixel-1"></div>
+                        <div class="pixel pixel-2"></div>
+                        <div class="pixel pixel-3"></div>
+                    </div>
+                    <div class="pixel-arrow r">
+                        <div class="pixel pixel-1"></div>
+                        <div class="pixel pixel-2"></div>
+                        <div class="pixel pixel-3"></div>
+                    </div>
+                    <div class="pixel-arrow b">
+                        <div class="pixel pixel-1"></div>
+                        <div class="pixel pixel-2"></div>
+                        <div class="pixel pixel-3"></div>
+                    </div>
+                    <img src="/img/bg/about-bg.jpg" alt="">
                 </div>
-                <div class="pixel-arrow t">
-                    <div class="pixel pixel-1"></div>
-                    <div class="pixel pixel-2"></div>
-                    <div class="pixel pixel-3"></div>
-                </div>
-                <div class="pixel-arrow r">
-                    <div class="pixel pixel-1"></div>
-                    <div class="pixel pixel-2"></div>
-                    <div class="pixel pixel-3"></div>
-                </div>
-                <div class="pixel-arrow b">
-                    <div class="pixel pixel-1"></div>
-                    <div class="pixel pixel-2"></div>
-                    <div class="pixel pixel-3"></div>
-                </div>
-                <img src="/img/bg/about-bg.jpg" alt="">
             </div>
             <div class="about-text">
-                <h2>Про нас</h2>
-                <p>У лютому 2022 року життя мирних громадян України кардинально змінилося. Путінська армія увірвалася на нашу землю, лишаючи за собою спалені міста та тисячі закатованих і вбитих мирних жителів. Але російські загарбники не знали, що замість того, щоб миритися з цією ситуацією та підкорятися їхнім божевільним імперіалістичним ідеям, українці об’єднаються для супротиву, підтримуючи одне одного.</p>
-                <p>Відданість, прозорість та єдність – ось цінності українського народу, на яких побудований фонд <span>Mild Hills</span>. Оскільки мирний світ, який ми знали раніше, руйнується, ховаючи тисячі чоловіків, жінок і дітей під уламками їхніх власних домівок, ми не не можемо витрачати час даремно – ми маємо діяти. <span>Mild Hills</span> — це організація, яка працює над тим, щоб зробити всі процеси військового постачання швидшими, простішими та надійнішими. Бо вчасно доставлений куленепробивний жилет, хімзахист чи тепловізор – це не лише врятоване життя українського захисника. Це шанс вижити для сотень мирних жителів, за майбутнє яких він воює.</p>
+                <h2 class="multilingual" key="about-title">Про нас</h2>
+                <p class="multilingual" key="about-first-indent">У лютому 2022 року життя мирних громадян України кардинально змінилося. Путінська армія увірвалася на нашу землю, лишаючи за собою спалені міста та тисячі закатованих і вбитих мирних жителів. Але російські загарбники не знали, що замість того, щоб миритися з цією ситуацією та підкорятися їхнім божевільним імперіалістичним ідеям, українці об’єднаються для супротиву, підтримуючи одне одного.</p>
+                <p class="multilingual" key="about-second-indent">Відданість, прозорість та єдність – ось цінності українського народу, на яких побудований фонд <span>Mild Hills</span>. Оскільки мирний світ, який ми знали раніше, руйнується, ховаючи тисячі чоловіків, жінок і дітей під уламками їхніх власних домівок, ми не не можемо витрачати час даремно – ми маємо діяти. <span>Mild Hills</span> — це організація, яка працює над тим, щоб зробити всі процеси військового постачання швидшими, простішими та надійнішими. Бо вчасно доставлений куленепробивний жилет, хімзахист чи тепловізор – це не лише врятоване життя українського захисника. Це шанс вижити для сотень мирних жителів, за майбутнє яких він воює.</p>
             </div>
         </div>
         <div class="about-arrow-box">
@@ -183,23 +211,31 @@
             <form id="help-form" class="help-form">
                 <img class="pixel-picture" src="/img/pixel-picture.svg" alt="">
                 <div class="type-block">
-                    <h1>Отримай допомогу</h1>
-                    <p>Ви постраждали від  віїни в Україні?<br>Напишіть нам як ми можемо вам допомогти</p>
-                    <input type="radio" id="legal" name="type" value="legal">
-                    <label for="legal">Юредична допомога</label><br>
-                    <input type="radio" id="health" name="type" value="health">
-                    <label for="health">Медична допомога</label><br>
-                    <input type="radio" id="matirial" name="type" value="material">
-                    <label for="matirial">Матеріальна допомога</label><br>
-                    <input type="radio" id="other" name="type" value="other" checked="checked">
-                    <label for="other">Iнше</label>
+                    <h1 class="multilingual" key="help-title">Отримай допомогу</h1>
+                    <p class="multilingual" key="help-appeal">Ви постраждали від  віїни в Україні?<br>Напишіть нам як ми можемо вам допомогти</p>
+                    <div class="input-box">
+                        <input type="radio" id="legal" name="type" value="legal">
+                        <label for="legal" class="multilingual" key="help-legal-option">Юридична допомога</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="radio" id="health" name="type" value="health">
+                        <label for="health" class="multilingual" key="help-health-option">Медична допомога</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="radio" id="matirial" name="type" value="material">
+                        <label for="matirial" class="multilingual" key="help-material-option">Матеріальна допомога</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="radio" id="other" name="type" value="other" checked="checked">
+                        <label for="other" class="multilingual" key="help-other-option">Iнше</label>
+                    </div>
                 </div>
                 <div class="writer-info">
-                    <input type="text" id="name" name="name" placeholder="Ваше ім’я"/>
-                    <input type="text" id="email" name="email" placeholder="Ваше електронна пошта"/>
-                    <input type="text" id="phone" name="phone" placeholder="Контактний телефон"/>
-                    <input type="text" id="telegram" name="telegram" placeholder="Нік у Telegram"/>
-                    <button class="donat-button" type="submit">Надіслати</button>
+                    <input type="text" id="name" name="name" class="multilingual input" key="help-input-name" placeholder="Ваше ім’я"/>
+                    <input type="text" id="email" name="email" class="multilingual input" key="help-input-email" placeholder="Ваше електронна пошта"/>
+                    <input type="text" id="phone" name="phone" class="multilingual input" key="help-input-phone" placeholder="Контактний телефон"/>
+                    <input type="text" id="telegram" name="telegram" class="multilingual input" key="help-input-telegram" placeholder="Нік у Telegram"/>
+                    <button class="donate-button multilingual" type="submit" key="help-send">Надіслати</button>
                 </div>
             </form>
         </div>
@@ -218,7 +254,7 @@
                                 <div class="pixel pixel-3"></div>
                                 <div class="pixel pixel-4"></div>
                             </div>
-                            <p>Завантажте додаток Приват24</p>
+                            <p class="multilingual" key="application-step2">Завантажте додаток Приват24</p>
                         </div>
                     </div>
                     <div class="step-block step2">
@@ -233,7 +269,7 @@
                                 <div class="pixel pixel-3"></div>
                                 <div class="pixel pixel-4"></div>
                             </div>
-                            <p>Натисните QR</p>
+                            <p class="multilingual" key="application-step3">Натисните QR</p>
                         </div>
                     </div>
                     <div class="step-block step3">
@@ -248,7 +284,7 @@
                                 <div class="pixel pixel-3"></div>
                                 <div class="pixel pixel-4"></div>
                             </div>
-                            <p>Відскануйте QR</p>
+                            <p class="multilingual" key="application-step4">Відскануйте QR</p>
                         </div>
                     </div>
                     <div class="step-block step4">
@@ -263,50 +299,57 @@
                                 <div class="pixel pixel-3"></div>
                                 <div class="pixel pixel-4"></div>
                             </div>
-                            <p>Оберати картку для оплати</div>
+                            <p class="multilingual" key="application-step4">Оберати картку для оплати</div>
                     </div>
                 </div>
-                <div class="app-donat-block">
-                    <a class="donat-button" href="#donat-form">Допомогти</a>
+                <div class="app-donate-block">
+                    <a class="donate-button multilingual" key="application-button" href="#donate-form">Допомогти</a>
                 </div>
             </div>
         </div>
-        <div class="donat-form-box">
-            <div class="donat-form-block" id="donat-form">
-                <h1>Допомогти зараз</h1>
-                <div class="donat-method">
-                    <button onclick="openBank()" class="bank-button active">Банківська <br> картка</button>
-                    <button onclick="openRemittance()" class="remittance-button">Грошовий <br> переказ</button>
+        <div class="donate-form-box">
+            <div class="donate-form-block" id="donate-form">
+                <h1 class="multilingual" key="donate-title">Допомогти зараз</h1>
+                <div class="donate-method">
+                    <button onclick="openBank()" class="bank-button active multilingual" key="donate-type-bank">Банківська<br> картка</button>
+                    <button onclick="openRemittance()" class="remittance-button multilingual" key="donate-type-remittance">Грошовий<br> переказ</button>
                 </div>
-                <form class="donat-form active">
-                    <div class="donat-count-block">
-                        <input type="radio" id="donat20" name="type" value="20">
-                        <label for="donat20" class="active">20 грн.</label>
-                        <input type="radio" id="donat50" name="type" value="50">
-                        <label for="donat50">50 грн.</label>
-                        <input type="radio" id="donat500" name="type" value="500">
-                        <label for="donat500">500 грн.</label>
-                        <input type="radio" id="donat200" name="type" value="200" checked="checked">
-                        <label for="donat200">200 грн.</label>
-                        <input type="radio" id="donat2000" name="type" value="2000">
-                        <label for="donat2000">2000 грн.</label>
-                        <input type="radio" id="donatOther" name="type" value="other">
-                        <label for="donatOther" class="other-count">інша сумма</label>
+                <form class="donate-form active">
+                    <div class="donate-count-block">
+                        <input type="radio" id="donate20" name="type" value="20">
+                        <label for="donate20" class="active">20 грн.</label>
+                        <input type="radio" id="donate50" name="type" value="50">
+                        <label for="donate50">50 грн.</label>
+                        <input type="radio" id="donate500" name="type" value="500">
+                        <label for="donate500">500 грн.</label>
+                        <input type="radio" id="donate200" name="type" value="200" checked="checked">
+                        <label for="donate200">200 грн.</label>
+                        <input type="radio" id="donate2000" name="type" value="2000">
+                        <label for="donate2000">2000 грн.</label>
+                        <input type="radio" id="donateOther" name="type" value="other">
+                        <label for="donateOther" class="other-count multilingual" key="donate-other-count">інша сумма</label>
                     </div>
-                    <div class="donat-info">
-                        <input type="text" id="donat-name" name="name" placeholder="Ваше ім’я"/>
-                        <input type="text" id="donat-email" name="email" placeholder="Ваше електронна пошта"/>
-                        <input type="text" id="donat-phone" name="phone" placeholder="Контактний телефон"/>
-                        <button class="donat-button" type="submit">Допомогти</button>
+                    <div class="donate-info">
+                        <input type="text" id="donate-name" name="name" class="multilingual input" key="donate-input-name" placeholder="Ваше ім’я"/>
+                        <input type="text" id="donate-email" name="email" class="multilingual input" key="donate-input-email" placeholder="Ваше електронна пошта"/>
+                        <input type="text" id="donate-phone" name="phone" class="multilingual input" key="donate-input-phone" placeholder="Контактний телефон"/>
+                        <button class="donate-button multilingual" key="donate-block-button" type="submit">Допомогти</button>
                     </div>
                 </form>
                 <div class="remittance">
                     <div class="remittance-type">
-                        <button class="active">₴</button>
-                        <button>$</button>
-                        <button>€</button>
-                        <button>zł</button>
-                        <button>£</button>
+                        <form action="">
+                            <input type="radio" id="uaCurrency" name="currency" value="₴" checked="checked">
+                            <label for="uaCurrency">₴</label>
+                            <input type="radio" id="usaCurrency" name="currency" value="$">
+                            <label for="usaCurrency">$</label>
+                            <input type="radio" id="euroCurrency" name="currency" value="€">
+                            <label for="euroCurrency">€</label>
+                            <input type="radio" id="plCurrency" name="currency" value="zł">
+                            <label for="plCurrency">zł</label>
+                            <input type="radio" id="gbCurrency" name="currency" value="£">
+                            <label for="gbCurrency">£</label>
+                        </form>
                     </div>
                     <h3>Реквізити підприємства/Company details</h3>
                     <div class="row">
@@ -364,20 +407,20 @@
     <div class="footer-block">
         <div class="block-with-logo">
             <img class="logo" src="/img/logo-black.svg" alt="Mild Hills">
-            <p>Ми збираємо кошти на життєво<br> важливі програми для людей в<br> Україні, які постраждали від війни</p>
+            <p class="multilingual" key="footer-description">Ми збираємо кошти на життєво<br> важливі програми для людей в<br> Україні, які постраждали від війни</p>
         </div>
         <div class="footer-link-block">
             <div class="info">
-                <h3>Інформація</h3>
+                <h3 class="multilingual" key="footer-inf-title">Інформація</h3>
                 <ul>
-                    <li><a href="#about">Про нас</a></li>
-                    <li><a href="#work">Благодійна платформа</a></li>
-                    <li><a href="#donat-form">Допомогти зараз</a></li>
-                    <li><a href="#help-form">Отримати допомогу</a></li>
+                    <li><a href="#about" class="multilingual" key="footer-inf-about">Про нас</a></li>
+                    <li><a href="#work" class="multilingual" key="footer-inf-beginning">Благодійна платформа</a></li>
+                    <li><a href="#donate-form" class="multilingual" key="footer-inf-donate">Допомогти зараз</a></li>
+                    <li><a href="#help-form" class="multilingual" key="footer-inf-help">Отримати допомогу</a></li>
                 </ul>
             </div>
             <div class="props">
-                <h3>Реквiзити</h3>
+                <h3 class="multilingual" key="footer-remittance-title">Реквiзити</h3>
                 <ul>
                     <li><a href="">Українська гривня ₴</a></li>
                     <li><a href="">United States Dollar $</a></li>
@@ -387,7 +430,7 @@
                 </ul>
             </div>
             <div class="contact">
-                <h3>Контакти Mild Hills</h3>
+                <h3 class="multilingual" key="footer-contact-title">Контакти Mild Hills</h3>
                 <ul>
                     <li class="phone icomoon">
                         <a href="tel:+380630616485">+38 (063) 061 64 85</a>
@@ -396,13 +439,15 @@
                         <a href="mailto: сf.mildhills@gmail.com">сf.mildhills@gmail.com</a>
                     </li>
                     <li class="location icomoon">
-                        <a href="https://goo.gl/maps/wRw9w8gutupgbp8r6" target="_blank">м. Київ, вул. Васількивська, 100-А</a>
+                        <a href="https://goo.gl/maps/wRw9w8gutupgbp8r6" class="multilingual" key="footer-contact-address" target="_blank">м. Київ, вул. Васількивська, 100-А</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-    <p class="copywriter">2022 Mild Hills. © Усі права захищені</p>
+    <p class="copywriter multilingual" key="footer-c">2022 Mild Hills. © Усі права захищені</p>
 </footer>
+<script src="dist/script.js"></script>
+<script src="dist/lang.js"></script>
 </body>
 </html>
