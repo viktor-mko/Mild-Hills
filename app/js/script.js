@@ -1,4 +1,4 @@
-const donatForm = document.querySelector(".donat-form");
+const donatForm = document.querySelector(".donate-form");
 const remittance = document.querySelector(".remittance");
 const remittanceButton = document.querySelector(".remittance-button");
 const bunkButton = document.querySelector(".bank-button");
@@ -7,9 +7,11 @@ function toggleMenu() {
     const menuButton = document.querySelector(".burger-menu");
     const mobileMenu = document.querySelector(".mobile-menu");
     const mobileLogo = document.querySelector(".mobile-header .logo-block");
+    const mobileHeader = document.querySelector("header");
     menuButton.classList.toggle("active");
     mobileMenu.classList.toggle("active");
     mobileLogo.classList.toggle("active");
+    mobileHeader.classList.toggle("menu-active");
 }
 
 function openBank() {
@@ -27,19 +29,25 @@ function openRemittance() {
 }
 
 function changeLanguage() {
-    const ua = document.querySelector(".ua");
-    const en = document.querySelector(".en");
+    const ua = document.querySelectorAll(".ua");
+    const en = document.querySelectorAll(".en");
     const language = this.getAttribute("key");
     if (language === "ua") {
-        en.classList.remove("active");
-        ua.classList.add("active");
+        ua.forEach(element => element.classList.add("active"));
+        en.forEach(element => element.classList.remove("active"));
     } else {
-        ua.classList.remove("active");
-        en.classList.add("active");
+        ua.forEach(element => element.classList.remove("active"));
+        en.forEach(element => element.classList.add("active"));
     }
     const multilingual = document.querySelectorAll(".multilingual");
     multilingual.forEach(
-        element=>element.innerHTML = (arrLang[language][element.getAttribute('key')])
+        (element) => {
+            if (element.classList.contains('input')) {
+                element.setAttribute("placeholder", arrLang[language][element.getAttribute('key')])
+            } else {
+                element.innerHTML = (arrLang[language][element.getAttribute('key')])
+            }
+        }
     )
 };
 

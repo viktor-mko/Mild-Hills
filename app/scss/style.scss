@@ -77,7 +77,7 @@ h2 {
   }
 }
 
-.donat-button {
+.donate-button {
   font-weight: 700;
   background: #063758;
   box-shadow: 0px 10px 23px rgba(0, 85, 158, 0.3);
@@ -103,7 +103,7 @@ header {
   display: flex;
   align-items: center;
   height: 96px;
-  padding: 20px;
+  padding: 20px 40px 20px 20px;
   background: black;
   a {
     color: #fff;
@@ -116,6 +116,7 @@ header {
     flex: 0 0 50%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
   .logo-block {
     display: flex;
@@ -175,7 +176,7 @@ header {
       }
     }
   }
-  .donat-button {
+  .donate-button {
     margin-right: 48px;
     width: 200px;
   }
@@ -257,6 +258,7 @@ header {
         top: 0;
         padding: 15px;
         height: 100%;
+        width: 100%;
         word-break: break-word;
         img {
           margin-bottom: 20px;
@@ -365,7 +367,7 @@ header {
         line-height: 24px;
         color: #d9edff;
       }
-      .donat-button {
+      .donate-button {
         width: 300px;
       }
     }
@@ -617,17 +619,17 @@ header {
           }
         }
       }
-      .app-donat-block {
+      .app-donate-block {
         display: flex;
         justify-content: right;
         margin: 100px 300px 0 0;
       }
     }
   }
-  .donat-form-box {
+  .donate-form-box {
     background: url("/img/bg/pixel-bg.jpg") 0 0;
     padding: 180px 15px 160px;
-    .donat-form-block {
+    .donate-form-block {
       background: #F5F5F5;
       max-width: 1558px;
       margin: 0 auto;
@@ -642,7 +644,7 @@ header {
         line-height: 60px;
         margin-bottom: 45px;
       }
-      .donat-method {
+      .donate-method {
         button {
           margin-right: 24px;
           br {
@@ -686,18 +688,18 @@ header {
         }
       }
     }
-    .donat-form , .remittance {
+    .donate-form , .remittance {
       display: none;
     }
-    .donat-form.active {
+    .donate-form.active {
       display: flex;
     }
     .remittance.active {
       display: block;
     }
-  .donat-form {
+  .donate-form {
       margin-top: 45px;
-      .donat-count-block {
+      .donate-count-block {
         flex: 0 0 50%;
         input {
           position: absolute;
@@ -733,7 +735,7 @@ header {
           color: #FFF;
         }
       }
-      .donat-info {
+      .donate-info {
         display: flex;
         flex-direction: column;
         align-items: end;
@@ -921,7 +923,7 @@ footer {
 
 @media screen and (max-width: 1330px) {
   header {
-    .donat-button ,
+    .donate-button ,
     .navigate li {
       margin-right: 20px;
     }
@@ -984,15 +986,15 @@ footer {
           padding-left: 80px;
         }
       }
-      .app-donat-block {
+      .app-donate-block {
         justify-content: center;
         margin: 100px 0 0;
       }
     }
-    .donat-form-box .donat-form-block {
+    .donate-form-box .donate-form-block {
       padding: 80px 50px;
     }
-    .donat-form-box .remittance .row .name {
+    .donate-form-box .remittance .row .name {
       width: 35%;
       padding-right: 20px;
     }
@@ -1115,7 +1117,7 @@ footer {
         }
       }
     }
-    .donat-form-box .remittance {
+    .donate-form-box .remittance {
       h3 {
         font-size: 24px;
         margin-bottom: 15px;
@@ -1140,6 +1142,11 @@ footer {
   header {
     height: 60px;
     padding: 0 16px;
+    &.menu-active {
+      width: 100%;
+      position: fixed;
+      z-index: 300;
+    }
     .head-half {
       display: none;
     }
@@ -1199,7 +1206,7 @@ footer {
     .mobile-menu {
       height: calc(100vh - 60px);
       width: 100%;
-      position: absolute;
+      position: fixed;
       top: 60px;
       left: 0;
       z-index: 100;
@@ -1259,7 +1266,7 @@ footer {
           line-height: 24px;
           color: #d9edff;
         }
-        .donat-button {
+        .donate-button {
           width: 300px;
         }
       }
@@ -1325,19 +1332,19 @@ footer {
         }
       }
     }
-    .donat-form-box {
+    .donate-form-box {
       padding-top: 80px;
-      .donat-form-block {
+      .donate-form-block {
         h1 {
           font-size: 24px;
           line-height: 29px;
           margin-bottom: 25px;
         }
         padding: 50px 15px;
-        .donat-form {
+        .donate-form {
           flex-direction: column;
           align-items: center;
-          .donat-count-block {
+          .donate-count-block {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -1345,9 +1352,9 @@ footer {
               font-size: 16px;
             }
           }
-          .donat-info {
+          .donate-info {
             width: 100%;
-            .donat-button {
+            .donate-button {
               width: 100%;
             }
           }
@@ -1405,7 +1412,7 @@ footer {
           line-height: 24px;
           color: #d9edff;
         }
-        .donat-button {
+        .donate-button {
           max-width: 300px;
           width: 100%;
         }
@@ -1442,7 +1449,7 @@ footer {
 
 @media screen and (max-width: 425px) {
   .presentation-block {
-    .right-blocks .blue-block .donat-button {
+    .right-blocks .blue-block .donate-button {
         max-width:100%;
     }
   }
@@ -1492,7 +1499,7 @@ footer {
         }
       }
       .writer-info {
-        .donat-button {
+        .donate-button {
           width: 100%;
         }
       }
@@ -1507,29 +1514,33 @@ footer {
           font-size: 16px;
         }
       }
-      .app-donat-block {
+      .app-donate-block {
         margin-top: 0;
         width: 100%;
-        .donat-button {
+        .donate-button {
           width: 100%;
         }
       }
     }
-    .donat-form-box {
+    .donate-form-box {
       padding-top: 40px;
       padding-bottom: 40px;
-      .donat-form-block {
-        .donat-method button {
+      .donate-form-block {
+        .donate-method button {
           text-align: left;
+          padding-bottom: 8px;
           br {
             display: inline-block;
           }
         }
-        .donat-form .donat-count-block {
+        .donate-form .donate-count-block {
           margin-bottom: 40px;
           label {
-            width: 121px;
-            margin: 0 8px 8px 0;
+            width: 48%;
+            margin: 0 0 8px;
+            &:nth-of-type(odd) {
+              margin-right: 8px;;
+            }
           }
         }
       }
