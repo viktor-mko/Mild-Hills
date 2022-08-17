@@ -333,7 +333,7 @@
                         <input type="text" id="donate-name" name="name" class="multilingual input" key="donate-input-name" placeholder="Ваше ім’я"/>
                         <input type="text" id="donate-email" name="email" class="multilingual input" key="donate-input-email" placeholder="Ваше електронна пошта"/>
                         <input type="text" id="donate-phone" name="phone" class="multilingual input" key="donate-input-phone" placeholder="Контактний телефон"/>
-                        <button class="donate-button multilingual" onclick="setTimeout(function(){location.href=button.getUrl()},0)">Допомогти</button>
+                        <button class="donate-button multilingual" onclick="donate()">Допомогти</button>
                     </div>
                 </form>
                 <div class="remittance">
@@ -448,12 +448,6 @@
     <p class="copywriter multilingual" key="footer-c">2022 Mild Hills. © Усі права захищені</p>
 </footer>
 <script src="https://pay.fondy.eu/static_common/v1/checkout/ipsp.js"></script>
-<script>
-    const button = $ipsp.get('button');
-    button.setMerchantId(1506333);
-    button.setAmount('', 'USD');
-    button.setHost('pay.fondy.eu');
-</script>
 <script src="dist/lang.js"></script>
 <script src="dist/currency.js"></script>
 <script src="dist/script.js"></script>

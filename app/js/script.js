@@ -88,3 +88,52 @@ const currency = document.querySelectorAll(".currency");
 currency.forEach(item=>{
     item.addEventListener('click', changeCurrency);
 });
+
+
+////////Donate //////////
+
+function getValue () {
+    const donateValue = document.querySelectorAll('.donate-count-block input');
+    let result;
+    donateValue.forEach(function (elem) {
+        if (elem.checked) {
+            const value = elem.value;
+            result = (value === 'other') ? '': value;
+        }
+    });
+    return result;
+}
+
+function donate () {
+
+    const donateValue = getValue();
+    const payerName = document.getElementById("donate-name").value;
+    const payerEmail = document.getElementById("donate-email").value;
+    const payerPhone = document.getElementById("donate-phone").value;
+
+    const button = $ipsp.get('button');
+    button.setMerchantId(1506333);
+    button.setAmount(donateValue, 'UAH');
+    button.setHost('pay.fondy.eu');
+
+    button.addField({
+        label: "Ваше ім'я",
+        name: 'name',
+        value: payerName,
+        required: false
+    });
+    button.addField({
+        label: 'Ваша електронна пошта',
+        name: 'email',
+        value: payerEmail,
+        required: false
+    });
+    button.addField({
+        label: 'Ваш телефон',
+        name: 'phone',
+        value: payerPhone,
+        required: false
+    });
+
+    setTimeout(function(){location.href=button.getUrl()},0)
+};
