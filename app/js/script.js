@@ -3,7 +3,7 @@ const remittance = document.querySelector(".remittance");
 const remittanceButton = document.querySelector(".remittance-button");
 const bunkButton = document.querySelector(".bank-button");
 
-function toggleMenu() {
+function toggleMenu () {
     const menuButton = document.querySelector(".burger-menu");
     const mobileMenu = document.querySelector(".mobile-menu");
     const mobileLogo = document.querySelector(".mobile-header .logo-block");
@@ -14,21 +14,27 @@ function toggleMenu() {
     mobileHeader.classList.toggle("menu-active");
 }
 
-function openBank() {
-    donatForm.classList.add("active");
-    remittance.classList.remove("active");
-    bunkButton.classList.add("active");
-    remittanceButton.classList.remove("active");
+function deleteClass (elements, className) {
+    elements.forEach(element => element.classList.remove(className));
 }
 
-function openRemittance() {
-    donatForm.classList.remove("active");
-    remittance.classList.add("active");
-    bunkButton.classList.remove("active");
-    remittanceButton.classList.add("active");
+function addClass (elements, className) {
+    elements.forEach(element => element.classList.add(className));
 }
 
-function changeLanguage() {
+function openBank () {
+    addClass([donatForm, bunkButton],"active");
+    deleteClass([remittance, remittanceButton], "active")
+}
+
+function openRemittance () {
+    addClass([remittance, remittanceButton],"active");
+    deleteClass([donatForm, bunkButton], "active")
+}
+
+////////Toggle Language //////////
+
+function changeLanguage () {
     const ua = document.querySelectorAll(".ua");
     const en = document.querySelectorAll(".en");
     const language = this.getAttribute("key");
@@ -57,8 +63,28 @@ language.forEach(item=>{
     item.addEventListener('click', changeLanguage);
 });
 
+////////Toggle Сurrency //////////
 
-//// Fondy  ////
+function changeCurrency () {
+    const corrBank2 = document.querySelectorAll(".corr-bank-2");
+    const currencyType = this.getAttribute("id");
 
+    if (currencyType === "plCurrency" || currencyType === "gbCurrency") {
+        corrBank2.forEach(element => element.style.display = 'none');
+    } else {
+        corrBank2.forEach(element => element.style.display = 'flex');
+    }
 
-//// Help Form ////
+    const multilCurrency = document.querySelectorAll(".multi-currency");
+    multilCurrency.forEach(
+        (element) => {
+            element.innerHTML = (arrCurrency[currencyType][element.getAttribute('key')])
+        }
+    )
+};
+
+const currency = document.querySelectorAll(".currency");
+
+currency.forEach(item=>{
+    item.addEventListener('click', changeCurrency);
+});
