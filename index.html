@@ -339,15 +339,15 @@
                 <div class="remittance">
                     <div class="remittance-type">
                         <form action="">
-                            <input type="radio" id="uaCurrency" name="currency" value="₴" checked="checked">
+                            <input type="radio" id="uaCurrency" class="currency" name="currency" value="₴" checked="checked">
                             <label for="uaCurrency">₴</label>
-                            <input type="radio" id="usaCurrency" name="currency" value="$">
+                            <input type="radio" id="usaCurrency" class="currency" name="currency" value="$">
                             <label for="usaCurrency">$</label>
-                            <input type="radio" id="euroCurrency" name="currency" value="€">
+                            <input type="radio" id="euroCurrency" class="currency" name="currency" value="€">
                             <label for="euroCurrency">€</label>
-                            <input type="radio" id="plCurrency" name="currency" value="zł">
+                            <input type="radio" id="plCurrency" class="currency" name="currency" value="zł">
                             <label for="plCurrency">zł</label>
-                            <input type="radio" id="gbCurrency" name="currency" value="£">
+                            <input type="radio" id="gbCurrency" class="currency" name="currency" value="£">
                             <label for="gbCurrency">£</label>
                         </form>
                     </div>
@@ -358,7 +358,7 @@
                     </div>
                     <div class="row">
                         <p class="name">IBAN Code</p>
-                        <p class="value">UA083052990000026002026222487</p>
+                        <p class="value multi-currency" key="pb-iban">UA083052990000026002026222487</p>
                     </div>
                     <div class="row">
                         <p class="name">Назва банку/Name of the bank</p>
@@ -375,27 +375,27 @@
                     <h3>Банки кореспонденти / Correspondent banks</h3>
                     <div class="row">
                         <p class="name">Рахунок у банку-кореспонденті/Account in the correspondent bank</p>
-                        <p class="value">400886700401</p>
+                        <p class="value multi-currency" key="corr-bank-1-account">400886700401</p>
                     </div>
                     <div class="row">
                         <p class="name">SWIFT Code банку-кореспондента/SWIFT Code of the correspondent bank</p>
-                        <p class="value">COBADEFF</p>
+                        <p class="value multi-currency" key="corr-bank-1-swift">COBADEFF</p>
                     </div>
                     <div class="row">
                         <p class="name">Банк-кореспондент/Correspondent bank</p>
-                        <p class="value">Commerzbank AG, Frankfurt am Main, Germany</p>
+                        <p class="value multi-currency" key="corr-bank-1-name">Commerzbank AG, Frankfurt am Main, Germany</p>
                     </div>
-                    <div class="row">
+                    <div class="row corr-bank-2">
                         <p class="name">Рахунок у банку-кореспонденті/Account in the correspondent bank</p>
-                        <p class="value">6231605145</p>
+                        <p class="value multi-currency" key="corr-bank-2-account">6231605145</p>
                     </div>
-                    <div class="row">
+                    <div class="row corr-bank-2">
                         <p class="name">SWIFT Code банку-кореспондента/SWIFT Code of the correspondent bank</p>
-                        <p class="value">CHASDEFX</p>
+                        <p class="value multi-currency" key="corr-bank-2-swift">CHASDEFX</p>
                     </div>
-                    <div class="row">
+                    <div class="row corr-bank-2">
                         <p class="name">Банк-кореспондент/Correspondent bank</p>
-                        <p class="value">J.P.MORGAN AG, FRANKFURT AM MAIN, GERMANY</p>
+                        <p class="value multi-currency" key="corr-bank-2-name">J.P.MORGAN AG, FRANKFURT AM MAIN, GERMANY</p>
                     </div>
                 </div>
             </div>
@@ -454,7 +454,8 @@
     button.setAmount('', 'USD');
     button.setHost('pay.fondy.eu');
 </script>
-<script src="dist/script.js"></script>
 <script src="dist/lang.js"></script>
+<script src="dist/currency.js"></script>
+<script src="dist/script.js"></script>
 </body>
 </html>
