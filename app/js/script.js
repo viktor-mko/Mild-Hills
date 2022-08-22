@@ -137,3 +137,63 @@ function donate () {
 
     setTimeout(function(){location.href=button.getUrl()},0)
 };
+
+//////// Help Form //////////
+
+const  helpForm = document.getElementById("helpForm");
+helpForm.addEventListener("submit", formSend);
+
+const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+
+async function formSend (e) {
+    e.preventDefault();
+
+    let error = formValidate(helpForm);
+    let formDate = new FormData(helpForm);
+    const url = "http://mail.api.mildhills.org/help/request";
+
+    if (error === 0 ) {
+        let response = await fetch( url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: {
+                "telegram": formDate.get("telegram"),
+                "phone": formDate.get("phone"),
+                "email": formDate.get("email"),
+                "name": formDate.get("name"),
+                "requestType": formDate.get("type"),
+            }
+        });
+        let result = await response.json();
+        alert(result.message);
+    }
+}
+
+function formValidate (helpForm) {
+    let error = 0;
+    let formReq = document.querySelectorAll(".req");
+
+    for( index = 0; index < formReq.length; index++) {
+        let input = formReq[index];
+        deleteClass([input], "error");
+
+        if (input.getAttribute("name") === "email") {
+            if(!isEmailValid(input)){
+                addClass([input], "error");
+                error++;
+            }
+        } else if (input.value === '') {
+            addClass([input], "error");
+            error++;
+        }
+    }
+    return error;
+}
+
+function isEmailValid(input) {
+    return EMAIL_REGEXP.test(input.value);
+}
+
+
