@@ -167,7 +167,7 @@ async function formSend (e) {
             }
         });
         let result = await response.json();
-        alert(result.message);
+        console.log(result);
     }
 }
 
