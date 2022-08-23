@@ -159,13 +159,13 @@ async function formSend (e) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: {
+            body: JSON.stringify({
                 "telegram": formDate.get("telegram"),
                 "phone": formDate.get("phone"),
                 "email": formDate.get("email"),
                 "name": formDate.get("name"),
                 "requestType": formDate.get("type"),
-            }
+            })
         });
         let result = await response.json();
         console.log(result);
