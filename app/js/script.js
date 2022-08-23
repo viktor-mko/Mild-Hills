@@ -151,7 +151,7 @@ async function formSend (e) {
 
     let error = formValidate(helpForm);
     let formDate = new FormData(helpForm);
-    const url = "http://mail.api.mildhills.org/help/request";
+    const url = "https://mail.api.mildhills.org/help/request";
 
     if (error === 0 ) {
         let response = await fetch( url, {
