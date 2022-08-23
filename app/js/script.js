@@ -144,6 +144,7 @@ const  helpForm = document.getElementById("helpForm");
 helpForm.addEventListener("submit", formSend);
 
 const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+const PHONE_REGEXP = /(\+38)?\(?0(39|67|68|96|50|66|95|99|63|93|91|92|94)\)?\-?(\d{3})\-?(\d{2})\-?(\d{2})/g;
 
 async function formSend (e) {
     e.preventDefault();
@@ -184,6 +185,11 @@ function formValidate (helpForm) {
                 addClass([input], "error");
                 error++;
             }
+        } else if (input.getAttribute("name") === "phone") {
+            if(!isPhoneValid(input)){
+                addClass([input], "error");
+                error++;
+            }
         } else if (input.value === '') {
             addClass([input], "error");
             error++;
@@ -194,6 +200,9 @@ function formValidate (helpForm) {
 
 function isEmailValid(input) {
     return EMAIL_REGEXP.test(input.value);
+}
+function isPhoneValid(input) {
+    return PHONE_REGEXP.test(input.value);
 }
 
 
