@@ -212,29 +212,31 @@
                 <img class="pixel-picture" src="/img/pixel-picture.svg" alt="">
                 <div class="type-block">
                     <h1 class="multilingual" key="help-title">Отримай допомогу</h1>
-                    <p class="multilingual" key="help-appeal">Ви постраждали від  віїни в Україні?<br>Напишіть нам як ми можемо вам допомогти</p>
+                    <p class="multilingual" key="help-appeal">Ви постраждали від  війни в Україні?<br>Напишіть нам як ми можемо вам допомогти</p>
                     <div class="input-box">
-                        <input type="radio" id="legal" name="type" value="legal">
+                        <input type="radio" id="legal" name="type" value="JUDICIAL">
                         <label for="legal" class="multilingual" key="help-legal-option">Юридична допомога</label>
                     </div>
                     <div class="input-box">
-                        <input type="radio" id="health" name="type" value="health">
+                        <input type="radio" id="health" name="type" value="MEDICAL">
                         <label for="health" class="multilingual" key="help-health-option">Медична допомога</label>
                     </div>
                     <div class="input-box">
-                        <input type="radio" id="matirial" name="type" value="material">
+                        <input type="radio" id="matirial" name="type" value="FINANCIAL">
                         <label for="matirial" class="multilingual" key="help-material-option">Матеріальна допомога</label>
                     </div>
                     <div class="input-box">
-                        <input type="radio" id="other" name="type" value="other" checked="checked">
+                        <input type="radio" id="other" name="type" value="OTHER" checked="checked">
                         <label for="other" class="multilingual" key="help-other-option">Iнше</label>
                     </div>
                 </div>
                 <div class="writer-info">
-                    <input type="text" id="name" name="name" class="multilingual input" key="help-input-name" placeholder="Ваше ім’я"/>
-                    <input type="text" id="email" name="email" class="multilingual input" key="help-input-email" placeholder="Ваше електронна пошта"/>
-                    <input type="text" id="phone" name="phone" class="multilingual input" key="help-input-phone" placeholder="Контактний телефон"/>
-                    <input type="text" id="telegram" name="telegram" class="multilingual input" key="help-input-telegram" placeholder="Нік у Telegram"/>
+                    <input type="text" id="name" name="name" class="multilingual input req" key="help-input-name" placeholder="Ваше ім’я"/>
+                    <input type="text" id="email" name="email" class="multilingual input req" key="help-input-email" placeholder="Ваше електронна пошта"/>
+                    <span>Наприклад name@gmail.com</span>
+                    <input type="text" id="phone" name="phone" class="multilingual input req" key="help-input-phone" placeholder="Контактний телефон"/>
+                    <span>Наприклад +380681234567; 0681234567</span>
+                    <input type="text" id="telegram" name="telegram" class="multilingual input req" key="help-input-telegram" placeholder="Нік у Telegram"/>
                     <button class="donate-button multilingual" type="submit" key="help-send">Надіслати</button>
                 </div>
             </form>

@@ -137,3 +137,74 @@ function donate () {
 
     setTimeout(function(){location.href=button.getUrl()},0)
 };
+
+//////// Help Form //////////
+
+const  helpForm = document.getElementById("helpForm");
+helpForm.addEventListener("submit", formSend);
+
+const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+const PHONE_REGEXP = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+
+async function formSend (e) {
+    e.preventDefault();
+
+    let error = formValidate(helpForm);
+    let formDate = new FormData(helpForm);
+    const url = "https://mail.api.mildhills.org/help/request";
+
+    if (error === 0 ) {
+        let response = await fetch( url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "telegram": formDate.get("telegram"),
+                "phone": formDate.get("phone"),
+                "email": formDate.get("email"),
+                "name": formDate.get("name"),
+                "requestType": formDate.get("type"),
+            })
+        });
+        let result = await response.json();
+    }
+}
+
+function formValidate (helpForm) {
+    let error = 0;
+    let formReq = document.querySelectorAll(".req");
+
+    for( index = 0; index < formReq.length; index++) {
+        let input = formReq[index];
+        deleteClass([input], "error");
+
+        if (input.value === '') {
+            addClass([input], "error");
+            error++;
+            continue;
+        }
+
+        if (input.getAttribute("name") === "email") {
+            if(!isEmailValid(input)){
+                addClass([input], "error");
+                error++;
+            }
+        } else if (input.getAttribute("name") === "phone") {
+            if(!isPhoneValid(input)){
+                addClass([input], "error");
+                error++;
+            }
+        }
+    }
+    return error;
+}
+
+function isEmailValid(input) {
+    return EMAIL_REGEXP.test(input.value);
+}
+function isPhoneValid(input) {
+    return PHONE_REGEXP.test(input.value);
+}
+
+
