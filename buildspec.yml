@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  pre-build:
+    commands:
+      - npm install
+  build:
+    commands:
+      - npm install gulp -g
+      - gulp
+artifacts:
+  files:
+    - index.html
+    - dist/**/*
+    - img/**/*

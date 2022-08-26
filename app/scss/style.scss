@@ -538,8 +538,17 @@ header {
         box-sizing: border-box;
         padding: 0 25px;
         &.error {
-          border-color: red;
+          border-color: #e90000;
         }
+      }
+      input + span {
+        display: none;
+      }
+      input.error + span {
+        display: block;
+        top: -30px;
+        width: 100%;
+        position: relative;
       }
     }
   }
