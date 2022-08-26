@@ -541,6 +541,15 @@ header {
           border-color: #e90000;
         }
       }
+      input + span {
+        display: none;
+      }
+      input.error + span {
+        display: block;
+        top: -30px;
+        width: 100%;
+        position: relative;
+      }
     }
   }
   .app-container {
