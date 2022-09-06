@@ -243,6 +243,7 @@ header {
     }
   }
   .left-blocks {
+    flex: 0 0 41.4%;
     .info-block {
       .bg-img {
         height: 100%;
@@ -342,6 +343,9 @@ header {
     .bottom-info-block {
       display: flex;
       height: 66%;
+      .left-info-block {
+        flex: 1;
+      }
     }
   }
   .right-blocks {
@@ -377,9 +381,16 @@ header {
     .colorless-block {
       height: 29%;
       display: flex;
+      .right-image {
+        width: 75%;
+      }
+      .left-image {
+        width: 25%;
+      }
       img {
         object-fit: cover;
         height: 100%;
+        width: 100%;
       }
     }
   }
@@ -919,7 +930,7 @@ footer {
     }
   }
   .presentation-block {
-    .right-blocks {
+    .right-blocks, .left-blocks {
       flex: auto;
     }
     .right-blocks .blue-block {
