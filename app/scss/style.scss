@@ -220,9 +220,10 @@ header {
 
 .presentation-block {
   height: 100vh;
-  width: 100%;
+  //width: 100%;
   overflow: hidden;
   display: flex;
+  //justify-content: center;
   .arrow-pixel {
     position: absolute;
     bottom: 50px;
@@ -249,6 +250,7 @@ header {
         object-fit: cover;
       }
       position: relative;
+      flex: 1;
       .info-content {
         display: none;
         position: absolute;
@@ -343,6 +345,7 @@ header {
     }
   }
   .right-blocks {
+    flex: 1;
     .blue-block {
       padding: 102px 20px 0 176px;
       height: 71%;
@@ -374,6 +377,10 @@ header {
     .colorless-block {
       height: 29%;
       display: flex;
+      img {
+        object-fit: cover;
+        height: 100%;
+      }
     }
   }
 }
@@ -912,6 +919,9 @@ footer {
     }
   }
   .presentation-block {
+    .right-blocks {
+      flex: auto;
+    }
     .right-blocks .blue-block {
       padding: 40px 20px 0 80px;
       h1 {
